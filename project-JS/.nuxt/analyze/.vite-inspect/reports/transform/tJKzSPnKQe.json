@@ -1,0 +1,17 @@
+{
+  "resolvedId": "virtual:nuxt:/home/wilczany/projekty-studia/JS/JS-project/project-JS/.nuxt/css.mjs",
+  "transforms": [
+    {
+      "name": "__load__",
+      "result": "",
+      "start": 1703171020666,
+      "end": 1703171020666
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1703171020666,
+      "end": 1703171020666,
+      "order": "normal"
+    }
+  ]
+}

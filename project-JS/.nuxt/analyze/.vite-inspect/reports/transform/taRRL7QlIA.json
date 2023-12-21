@@ -1,0 +1,495 @@
+{
+  "resolvedId": "/home/wilczany/projekty-studia/JS/JS-project/project-JS/pages/index.vue?macro=true",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n    <div>\n        <Navbar />\n        <div>\n            <p>{{}}</p>\n        </div>\n    </div>\n  </template>\n  \n  <script lang=\"ts\" setup>\n  \n  </script>\n  \n  <style>\n  \n  </style>\n\n\n<script>\n\n    export default {\n        data() {\n          return {\n            UserList: []\n          }  \n        },\n        methods:{\n            getData();\n        }\n    }\n</script>\n",
+      "start": 1703171020786,
+      "end": 1703171021102,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1703171021102,
+      "end": 1703171021102,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1703171021102,
+      "end": 1703171021102,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1703171021102,
+      "end": 1703171021102,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1703171021102,
+      "end": 1703171021102,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1703171021102,
+      "end": 1703171021102,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1703171021102,
+      "end": 1703171021102,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1703171021102,
+      "end": 1703171021102,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "[Error]",
+      "start": 1703171021102,
+      "end": 1703171021104,
+      "order": "normal",
+      "error": {
+        "message": "[vue/compiler-sfc] Unexpected token, expected \"{\" (10:21)\n\n/home/wilczany/projekty-studia/JS/JS-project/project-JS/pages/index.vue\n26 |          },\n27 |          methods:{\n28 |              getData();\n   |                       ^\n29 |          }\n30 |      }",
+        "stack": [
+          {
+            "functionName": "<parse>",
+            "fileName": ":8711",
+            "source": "    at <parse> (:8711)"
+          },
+          {
+            "functionName": "constructor",
+            "fileName": "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@babel/parser/lib/index.js",
+            "lineNumber": 356,
+            "columnNumber": 25,
+            "source": "    at constructor (/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@babel/parser/lib/index.js:356:25)"
+          },
+          {
+            "functionName": "raise",
+            "fileName": "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@babel/parser/lib/index.js",
+            "lineNumber": 3398,
+            "columnNumber": 167,
+            "source": "    at raise (/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@babel/parser/lib/index.js:3398:167)"
+          },
+          {
+            "functionName": "unexpected",
+            "fileName": "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@babel/parser/lib/index.js",
+            "lineNumber": 3427,
+            "columnNumber": 23,
+            "source": "    at unexpected (/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@babel/parser/lib/index.js:3427:23)"
+          },
+          {
+            "functionName": "expect",
+            "fileName": "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@babel/parser/lib/index.js",
+            "lineNumber": 3537,
+            "columnNumber": 40,
+            "source": "    at expect (/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@babel/parser/lib/index.js:3537:40)"
+          },
+          {
+            "functionName": "parseBlock",
+            "fileName": "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@babel/parser/lib/index.js",
+            "lineNumber": 10786,
+            "columnNumber": 22,
+            "source": "    at parseBlock (/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@babel/parser/lib/index.js:10786:22)"
+          },
+          {
+            "functionName": "parseFunctionBody",
+            "fileName": "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@babel/parser/lib/index.js",
+            "lineNumber": 9899,
+            "columnNumber": 117,
+            "source": "    at parseFunctionBody (/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@babel/parser/lib/index.js:9899:117)"
+          },
+          {
+            "functionName": "parseFunctionBodyAndFinish",
+            "fileName": "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@babel/parser/lib/index.js",
+            "lineNumber": 9891,
+            "columnNumber": 36,
+            "source": "    at parseFunctionBodyAndFinish (/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@babel/parser/lib/index.js:9891:36)"
+          },
+          {
+            "functionName": "parseMethod",
+            "fileName": "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@babel/parser/lib/index.js",
+            "lineNumber": 9865,
+            "columnNumber": 59,
+            "source": "    at parseMethod (/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@babel/parser/lib/index.js:9865:59)"
+          },
+          {
+            "functionName": "parseObjPropValue",
+            "fileName": "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@babel/parser/lib/index.js",
+            "lineNumber": 9810,
+            "columnNumber": 42,
+            "source": "    at parseObjPropValue (/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@babel/parser/lib/index.js:9810:42)"
+          },
+          {
+            "functionName": "parseObjectLike",
+            "fileName": "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@babel/parser/lib/index.js",
+            "lineNumber": 9697,
+            "columnNumber": 46,
+            "source": "    at parseObjectLike (/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@babel/parser/lib/index.js:9697:46)"
+          },
+          {
+            "functionName": "parseExprSubscripts",
+            "fileName": "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@babel/parser/lib/index.js",
+            "lineNumber": 9107,
+            "columnNumber": 118,
+            "source": "    at parseExprSubscripts (/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@babel/parser/lib/index.js:9107:118)"
+          },
+          {
+            "functionName": "parseUpdate",
+            "fileName": "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@babel/parser/lib/index.js",
+            "lineNumber": 9095,
+            "columnNumber": 42,
+            "source": "    at parseUpdate (/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@babel/parser/lib/index.js:9095:42)"
+          },
+          {
+            "functionName": "parseMaybeUnary",
+            "fileName": "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@babel/parser/lib/index.js",
+            "lineNumber": 9075,
+            "columnNumber": 36,
+            "source": "    at parseMaybeUnary (/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@babel/parser/lib/index.js:9075:36)"
+          },
+          {
+            "functionName": "parseExprOps",
+            "fileName": "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@babel/parser/lib/index.js",
+            "lineNumber": 8944,
+            "columnNumber": 129,
+            "source": "    at parseExprOps (/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@babel/parser/lib/index.js:8944:129)"
+          },
+          {
+            "functionName": "parseMaybeConditional",
+            "fileName": "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@babel/parser/lib/index.js",
+            "lineNumber": 8928,
+            "columnNumber": 117,
+            "source": "    at parseMaybeConditional (/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@babel/parser/lib/index.js:8928:117)"
+          },
+          {
+            "functionName": "parseMaybeAssign",
+            "fileName": "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@babel/parser/lib/index.js",
+            "lineNumber": 8904,
+            "columnNumber": 44,
+            "source": "    at parseMaybeAssign (/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@babel/parser/lib/index.js:8904:44)"
+          },
+          {
+            "functionName": "parseObjectProperty",
+            "fileName": "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@babel/parser/lib/index.js",
+            "lineNumber": 9790,
+            "columnNumber": 115,
+            "source": "    at parseObjectProperty (/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@babel/parser/lib/index.js:9790:115)"
+          },
+          {
+            "functionName": "parseObjPropValue",
+            "fileName": "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@babel/parser/lib/index.js",
+            "lineNumber": 9810,
+            "columnNumber": 121,
+            "source": "    at parseObjPropValue (/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@babel/parser/lib/index.js:9810:121)"
+          },
+          {
+            "functionName": "parseObjectLike",
+            "fileName": "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@babel/parser/lib/index.js",
+            "lineNumber": 9697,
+            "columnNumber": 46,
+            "source": "    at parseObjectLike (/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@babel/parser/lib/index.js:9697:46)"
+          },
+          {
+            "functionName": "parseExprSubscripts",
+            "fileName": "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@babel/parser/lib/index.js",
+            "lineNumber": 9107,
+            "columnNumber": 118,
+            "source": "    at parseExprSubscripts (/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@babel/parser/lib/index.js:9107:118)"
+          },
+          {
+            "functionName": "parseUpdate",
+            "fileName": "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@babel/parser/lib/index.js",
+            "lineNumber": 9095,
+            "columnNumber": 42,
+            "source": "    at parseUpdate (/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@babel/parser/lib/index.js:9095:42)"
+          },
+          {
+            "functionName": "parseMaybeUnary",
+            "fileName": "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@babel/parser/lib/index.js",
+            "lineNumber": 9075,
+            "columnNumber": 36,
+            "source": "    at parseMaybeUnary (/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@babel/parser/lib/index.js:9075:36)"
+          },
+          {
+            "functionName": "parseExprOps",
+            "fileName": "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@babel/parser/lib/index.js",
+            "lineNumber": 8944,
+            "columnNumber": 129,
+            "source": "    at parseExprOps (/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@babel/parser/lib/index.js:8944:129)"
+          },
+          {
+            "functionName": "parseMaybeConditional",
+            "fileName": "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@babel/parser/lib/index.js",
+            "lineNumber": 8928,
+            "columnNumber": 117,
+            "source": "    at parseMaybeConditional (/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@babel/parser/lib/index.js:8928:117)"
+          },
+          {
+            "functionName": "parseMaybeAssign",
+            "fileName": "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@babel/parser/lib/index.js",
+            "lineNumber": 8904,
+            "columnNumber": 44,
+            "source": "    at parseMaybeAssign (/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@babel/parser/lib/index.js:8904:44)"
+          },
+          {
+            "functionName": "allowInAnd",
+            "fileName": "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@babel/parser/lib/index.js",
+            "lineNumber": 10193,
+            "columnNumber": 26,
+            "source": "    at allowInAnd (/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@babel/parser/lib/index.js:10193:26)"
+          },
+          {
+            "functionName": "parseExportDefaultExpression",
+            "fileName": "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@babel/parser/lib/index.js",
+            "lineNumber": 11267,
+            "columnNumber": 47,
+            "source": "    at parseExportDefaultExpression (/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@babel/parser/lib/index.js:11267:47)"
+          },
+          {
+            "functionName": "parseExport",
+            "fileName": "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@babel/parser/lib/index.js",
+            "lineNumber": 11192,
+            "columnNumber": 69,
+            "source": "    at parseExport (/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@babel/parser/lib/index.js:11192:69)"
+          },
+          {
+            "functionName": "parseStatementContent",
+            "fileName": "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@babel/parser/lib/index.js",
+            "lineNumber": 10464,
+            "columnNumber": 47,
+            "source": "    at parseStatementContent (/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@babel/parser/lib/index.js:10464:47)"
+          },
+          {
+            "functionName": "parseBlockOrModuleBlockBody",
+            "fileName": "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@babel/parser/lib/index.js",
+            "lineNumber": 10803,
+            "columnNumber": 53,
+            "source": "    at parseBlockOrModuleBlockBody (/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@babel/parser/lib/index.js:10803:53)"
+          },
+          {
+            "functionName": "parseBlockBody",
+            "fileName": "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@babel/parser/lib/index.js",
+            "lineNumber": 10797,
+            "columnNumber": 39,
+            "source": "    at parseBlockBody (/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@babel/parser/lib/index.js:10797:39)"
+          },
+          {
+            "functionName": "parseProgram",
+            "fileName": "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@babel/parser/lib/index.js",
+            "lineNumber": 10264,
+            "columnNumber": 119,
+            "source": "    at parseProgram (/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@babel/parser/lib/index.js:10264:119)"
+          },
+          {
+            "functionName": "parseTopLevel",
+            "fileName": "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@babel/parser/lib/index.js",
+            "lineNumber": 10259,
+            "columnNumber": 43,
+            "source": "    at parseTopLevel (/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@babel/parser/lib/index.js:10259:43)"
+          },
+          {
+            "functionName": "parse",
+            "fileName": "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@babel/parser/lib/index.js",
+            "lineNumber": 11701,
+            "columnNumber": 70,
+            "source": "    at parse (/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@babel/parser/lib/index.js:11701:70)"
+          },
+          {
+            "functionName": "parse",
+            "fileName": "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@babel/parser/lib/index.js",
+            "lineNumber": 1329,
+            "columnNumber": 45,
+            "source": "    at parse (/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@babel/parser/lib/index.js:1329:45)"
+          },
+          {
+            "functionName": "parse",
+            "fileName": "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@vue/compiler-sfc/dist/compiler-sfc.cjs.js",
+            "lineNumber": 2208,
+            "columnNumber": 32,
+            "source": "    at parse (/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@vue/compiler-sfc/dist/compiler-sfc.cjs.js:2208:32)"
+          },
+          {
+            "functionName": "new ScriptCompileContext",
+            "fileName": "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@vue/compiler-sfc/dist/compiler-sfc.cjs.js",
+            "lineNumber": 2219,
+            "columnNumber": 50,
+            "source": "    at new ScriptCompileContext (/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@vue/compiler-sfc/dist/compiler-sfc.cjs.js:2219:50)"
+          },
+          {
+            "functionName": "compileScript",
+            "fileName": "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@vue/compiler-sfc/dist/compiler-sfc.cjs.js",
+            "lineNumber": 4480,
+            "columnNumber": 41,
+            "source": "    at compileScript (/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@vue/compiler-sfc/dist/compiler-sfc.cjs.js:4480:41)"
+          },
+          {
+            "functionName": "resolveScript",
+            "fileName": "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@vitejs/plugin-vue/dist/index.mjs",
+            "lineNumber": 228,
+            "columnNumber": 48,
+            "source": "    at resolveScript (/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@vitejs/plugin-vue/dist/index.mjs:228:48)"
+          },
+          {
+            "functionName": "<anonymous>",
+            "fileName": "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@vitejs/plugin-vue/dist/index.mjs",
+            "lineNumber": 1325,
+            "columnNumber": 31,
+            "source": "    at <anonymous> (/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@vitejs/plugin-vue/dist/index.mjs:1325:31)"
+          },
+          {
+            "functionName": "genScriptCode",
+            "fileName": "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@vitejs/plugin-vue/dist/index.mjs",
+            "lineNumber": 1323,
+            "columnNumber": 30,
+            "source": "    at genScriptCode (/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@vitejs/plugin-vue/dist/index.mjs:1323:30)"
+          },
+          {
+            "functionName": "<anonymous>",
+            "fileName": "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@vitejs/plugin-vue/dist/index.mjs",
+            "lineNumber": 1235,
+            "columnNumber": 140,
+            "source": "    at <anonymous> (/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@vitejs/plugin-vue/dist/index.mjs:1235:140)"
+          },
+          {
+            "functionName": "transformMain",
+            "fileName": "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@vitejs/plugin-vue/dist/index.mjs",
+            "lineNumber": 1229,
+            "columnNumber": 30,
+            "source": "    at transformMain (/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@vitejs/plugin-vue/dist/index.mjs:1229:30)"
+          },
+          {
+            "functionName": "<anonymous>",
+            "fileName": "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/vite-plugin-inspect/dist/index.mjs",
+            "lineNumber": 272,
+            "columnNumber": 31,
+            "source": "    at <anonymous> (/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/vite-plugin-inspect/dist/index.mjs:272:31)"
+          },
+          {
+            "functionName": "<anonymous>",
+            "fileName": "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/vite-plugin-inspect/dist/index.mjs",
+            "lineNumber": 267,
+            "columnNumber": 44,
+            "source": "    at <anonymous> (/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/vite-plugin-inspect/dist/index.mjs:267:44)"
+          },
+          {
+            "functionName": "<anonymous>",
+            "fileName": "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/vite/node_modules/rollup/dist/es/shared/node-entry.js",
+            "lineNumber": 6268,
+            "columnNumber": 39,
+            "source": "    at <anonymous> (/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/vite/node_modules/rollup/dist/es/shared/node-entry.js:6268:39)"
+          },
+          {
+            "functionName": "processTicksAndRejections",
+            "fileName": ":61",
+            "lineNumber": 39,
+            "source": "    at processTicksAndRejections (:61:39)"
+          }
+        ],
+        "raw": {
+          "code": "PLUGIN_ERROR",
+          "reasonCode": "UnexpectedToken",
+          "loc": {
+            "line": 10,
+            "column": 21,
+            "index": 148
+          },
+          "pos": 148,
+          "originalLine": 48,
+          "originalColumn": 36,
+          "pluginCode": "BABEL_PARSER_SYNTAX_ERROR",
+          "plugin": "vite:vue",
+          "hook": "transform",
+          "id": "/home/wilczany/projekty-studia/JS/JS-project/project-JS/pages/index.vue?macro=true",
+          "watchFiles": [
+            "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/nuxt/dist/app/entry.js",
+            "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/vue/dist/vue.runtime.esm-bundler.js",
+            "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/nuxt/dist/app/nuxt.js",
+            "virtual:nuxt:/home/wilczany/projekty-studia/JS/JS-project/project-JS/.nuxt/paths.mjs",
+            "virtual:nuxt:/home/wilczany/projekty-studia/JS/JS-project/project-JS/.nuxt/fetch.mjs",
+            "virtual:nuxt:/home/wilczany/projekty-studia/JS/JS-project/project-JS/.nuxt/plugins/client.mjs",
+            "virtual:nuxt:/home/wilczany/projekty-studia/JS/JS-project/project-JS/.nuxt/root-component.mjs",
+            "virtual:nuxt:/home/wilczany/projekty-studia/JS/JS-project/project-JS/.nuxt/nuxt.config.mjs",
+            "virtual:nuxt:/home/wilczany/projekty-studia/JS/JS-project/project-JS/.nuxt/css.mjs",
+            "package.json",
+            "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/nuxt/dist/app/plugins/revive-payload.client.js",
+            "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/nuxt/dist/head/runtime/plugins/unhead.js",
+            "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/nuxt/dist/pages/runtime/plugins/router.js",
+            "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/nuxt/dist/app/plugins/payload.client.js",
+            "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/nuxt/dist/pages/runtime/plugins/prefetch.client.js",
+            "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/nuxt/dist/app/plugins/chunk-reload.client.js",
+            "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/nuxt/dist/app/plugins/check-outdated-build.client.js",
+            "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/ufo/dist/index.mjs",
+            "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/ofetch/dist/index.mjs",
+            "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/nuxt/dist/app/components/nuxt-root.vue",
+            "virtual:nuxt:/home/wilczany/projekty-studia/JS/JS-project/project-JS/.nuxt/components.plugin.mjs",
+            "virtual:nuxt:/home/wilczany/projekty-studia/JS/JS-project/project-JS/.nuxt/nitro.client.mjs",
+            "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/nuxt-icon/dist/runtime/Icon.vue?nuxt_component=async&nuxt_component_name=Icon",
+            "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/nuxt-icon/dist/runtime/IconCSS.vue?nuxt_component=async&nuxt_component_name=IconCSS",
+            "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@vue/runtime-dom/dist/runtime-dom.esm-bundler.js",
+            "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/hookable/dist/index.mjs",
+            "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/unctx/dist/index.mjs",
+            "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/nuxt/dist/app/composables/payload.js",
+            "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/nuxt/dist/app/composables/error.js",
+            "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/destr/dist/index.mjs",
+            "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/nuxt/dist/app/composables/ready.js",
+            "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/nuxt/dist/app/composables/router.js",
+            "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/nuxt/dist/app/composables/manifest.js",
+            "virtual:nuxt:/home/wilczany/projekty-studia/JS/JS-project/project-JS/.nuxt/layouts.mjs",
+            "virtual:nuxt:/home/wilczany/projekty-studia/JS/JS-project/project-JS/.nuxt/middleware.mjs",
+            "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/nuxt/dist/pages/runtime/validate.js",
+            "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/nuxt/dist/app/middleware/manifest-route-rule.js",
+            "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/nuxt/dist/app/composables/chunk.js",
+            "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/h3/dist/index.mjs",
+            "virtual:nuxt:/home/wilczany/projekty-studia/JS/JS-project/project-JS/.nuxt/vue-router-stub.mjs",
+            "virtual:nuxt:/home/wilczany/projekty-studia/JS/JS-project/project-JS/.nuxt/routes.mjs",
+            "virtual:nuxt:/home/wilczany/projekty-studia/JS/JS-project/project-JS/.nuxt/router.options.mjs",
+            "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/vue-router/dist/vue-router.mjs",
+            "/home/wilczany/projekty-studia/JS/JS-project/project-JS/pages/index.vue?macro=true",
+            "/home/wilczany/projekty-studia/JS/JS-project/project-JS/pages/login.vue?macro=true",
+            "/home/wilczany/projekty-studia/JS/JS-project/project-JS/pages/profile/[id].vue?macro=true",
+            "/home/wilczany/projekty-studia/JS/JS-project/project-JS/pages/register.vue?macro=true",
+            "/home/wilczany/projekty-studia/JS/JS-project/project-JS/pages/index.vue",
+            "/home/wilczany/projekty-studia/JS/JS-project/project-JS/pages/login.vue",
+            "/home/wilczany/projekty-studia/JS/JS-project/project-JS/pages/profile/[id].vue",
+            "/home/wilczany/projekty-studia/JS/JS-project/project-JS/pages/register.vue",
+            "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/nuxt/dist/pages/runtime/router.options.js",
+            "\u0000vite/preload-helper",
+            "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@unhead/vue/dist/index.mjs",
+            "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@unhead/dom/dist/index.mjs",
+            "virtual:nuxt:/home/wilczany/projekty-studia/JS/JS-project/project-JS/.nuxt/unhead-plugins.mjs",
+            "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/nuxt/dist/app/components/injections.js",
+            "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/nuxt/dist/app/components/island-renderer.js",
+            "virtual:nuxt:/home/wilczany/projekty-studia/JS/JS-project/project-JS/.nuxt/app-component.mjs",
+            "virtual:nuxt:/home/wilczany/projekty-studia/JS/JS-project/project-JS/.nuxt/error-component.mjs",
+            "virtual:nuxt:/home/wilczany/projekty-studia/JS/JS-project/project-JS/.nuxt/test-component-wrapper.mjs",
+            "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/ofetch/dist/shared/ofetch.00501375.mjs",
+            "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js",
+            "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@vue/shared/dist/shared.esm-bundler.js",
+            "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/devalue/index.js",
+            "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/nuxt/dist/app/compat/idle-callback.js",
+            "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/nuxt/dist/app/config.js",
+            "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/radix3/dist/index.mjs",
+            "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/defu/dist/defu.mjs",
+            "/home/wilczany/projekty-studia/JS/JS-project/project-JS/app.vue",
+            "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/nuxt/dist/app/components/nuxt-error-page.vue",
+            "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/nuxt/dist/app/components/test-component-wrapper.js",
+            "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/iron-webcrypto/dist/index.js",
+            "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/cookie-es/dist/index.mjs",
+            "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/uncrypto/dist/crypto.web.mjs",
+            "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/unenv/runtime/node/http/_request.mjs",
+            "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/unenv/runtime/node/http/_response.mjs",
+            "/home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@vue/devtools-api/lib/esm/index.js"
+          ]
+        }
+      }
+    }
+  ]
+}

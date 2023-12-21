@@ -1,0 +1,212 @@
+{
+  "resolvedId": "virtual:nuxt:/home/wilczany/projekty-studia/JS/JS-project/project-JS/.nuxt/routes.mjs",
+  "transforms": [
+    {
+      "name": "virtual",
+      "result": "import { default as indexHhQvsnJRFjMeta } from \"/home/wilczany/projekty-studia/JS/JS-project/project-JS/pages/index.vue?macro=true\";\nimport { default as loginlt2VbFNd8uMeta } from \"/home/wilczany/projekty-studia/JS/JS-project/project-JS/pages/login.vue?macro=true\";\nimport { default as _91id_93a557fzwYPHMeta } from \"/home/wilczany/projekty-studia/JS/JS-project/project-JS/pages/profile/[id].vue?macro=true\";\nimport { default as registerjM7vPVNuBJMeta } from \"/home/wilczany/projekty-studia/JS/JS-project/project-JS/pages/register.vue?macro=true\";\nexport default [\n  {\n    name: indexHhQvsnJRFjMeta?.name ?? \"index\",\n    path: indexHhQvsnJRFjMeta?.path ?? \"/\",\n    meta: indexHhQvsnJRFjMeta || {},\n    alias: indexHhQvsnJRFjMeta?.alias || [],\n    redirect: indexHhQvsnJRFjMeta?.redirect || undefined,\n    component: () => import(\"/home/wilczany/projekty-studia/JS/JS-project/project-JS/pages/index.vue\").then(m => m.default || m)\n  },\n  {\n    name: loginlt2VbFNd8uMeta?.name ?? \"login\",\n    path: loginlt2VbFNd8uMeta?.path ?? \"/login\",\n    meta: loginlt2VbFNd8uMeta || {},\n    alias: loginlt2VbFNd8uMeta?.alias || [],\n    redirect: loginlt2VbFNd8uMeta?.redirect || undefined,\n    component: () => import(\"/home/wilczany/projekty-studia/JS/JS-project/project-JS/pages/login.vue\").then(m => m.default || m)\n  },\n  {\n    name: _91id_93a557fzwYPHMeta?.name ?? \"profile-id\",\n    path: _91id_93a557fzwYPHMeta?.path ?? \"/profile/:id()\",\n    meta: _91id_93a557fzwYPHMeta || {},\n    alias: _91id_93a557fzwYPHMeta?.alias || [],\n    redirect: _91id_93a557fzwYPHMeta?.redirect || undefined,\n    component: () => import(\"/home/wilczany/projekty-studia/JS/JS-project/project-JS/pages/profile/[id].vue\").then(m => m.default || m)\n  },\n  {\n    name: registerjM7vPVNuBJMeta?.name ?? \"register\",\n    path: registerjM7vPVNuBJMeta?.path ?? \"/register\",\n    meta: registerjM7vPVNuBJMeta || {},\n    alias: registerjM7vPVNuBJMeta?.alias || [],\n    redirect: registerjM7vPVNuBJMeta?.redirect || undefined,\n    component: () => import(\"/home/wilczany/projekty-studia/JS/JS-project/project-JS/pages/register.vue\").then(m => m.default || m)\n  }\n]",
+      "start": 1703171020770,
+      "end": 1703171020770,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1703171020770,
+      "end": 1703171020770,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1703171020771,
+      "end": 1703171020771,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1703171020771,
+      "end": 1703171020771,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1703171020771,
+      "end": 1703171020771,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1703171020771,
+      "end": 1703171020771,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1703171020771,
+      "end": 1703171020771,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1703171020771,
+      "end": 1703171020771,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1703171020771,
+      "end": 1703171020771,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1703171020771,
+      "end": 1703171020771,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1703171020771,
+      "end": 1703171020771,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1703171020772,
+      "end": 1703171020772,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1703171020772,
+      "end": 1703171020772,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1703171020772,
+      "end": 1703171020772,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1703171020772,
+      "end": 1703171020772,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1703171020772,
+      "end": 1703171020772,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1703171020772,
+      "end": 1703171020773,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1703171020773,
+      "end": 1703171020773,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1703171020773,
+      "end": 1703171020773,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1703171020775,
+      "end": 1703171020775,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1703171020775,
+      "end": 1703171020775,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1703171020775,
+      "end": 1703171020775,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1703171020775,
+      "end": 1703171020775,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1703171020775,
+      "end": 1703171020775,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1703171020775,
+      "end": 1703171020775,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1703171020775,
+      "end": 1703171020777,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1703171020777,
+      "end": 1703171020777,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1703171020777,
+      "end": 1703171020777,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1703171020777,
+      "end": 1703171020777,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1703171020777,
+      "end": 1703171020777,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1703171020777,
+      "end": 1703171020777,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1703171020778,
+      "end": 1703171020778,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "result": "import { __vitePreload } from \"\u0000vite/preload-helper\";import { default as indexHhQvsnJRFjMeta } from \"/home/wilczany/projekty-studia/JS/JS-project/project-JS/pages/index.vue?macro=true\";\nimport { default as loginlt2VbFNd8uMeta } from \"/home/wilczany/projekty-studia/JS/JS-project/project-JS/pages/login.vue?macro=true\";\nimport { default as _91id_93a557fzwYPHMeta } from \"/home/wilczany/projekty-studia/JS/JS-project/project-JS/pages/profile/[id].vue?macro=true\";\nimport { default as registerjM7vPVNuBJMeta } from \"/home/wilczany/projekty-studia/JS/JS-project/project-JS/pages/register.vue?macro=true\";\nexport default [\n  {\n    name: indexHhQvsnJRFjMeta?.name ?? \"index\",\n    path: indexHhQvsnJRFjMeta?.path ?? \"/\",\n    meta: indexHhQvsnJRFjMeta || {},\n    alias: indexHhQvsnJRFjMeta?.alias || [],\n    redirect: indexHhQvsnJRFjMeta?.redirect || undefined,\n    component: () => __vitePreload(() => import(\"/home/wilczany/projekty-studia/JS/JS-project/project-JS/pages/index.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(m => m.default || m)\n  },\n  {\n    name: loginlt2VbFNd8uMeta?.name ?? \"login\",\n    path: loginlt2VbFNd8uMeta?.path ?? \"/login\",\n    meta: loginlt2VbFNd8uMeta || {},\n    alias: loginlt2VbFNd8uMeta?.alias || [],\n    redirect: loginlt2VbFNd8uMeta?.redirect || undefined,\n    component: () => __vitePreload(() => import(\"/home/wilczany/projekty-studia/JS/JS-project/project-JS/pages/login.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(m => m.default || m)\n  },\n  {\n    name: _91id_93a557fzwYPHMeta?.name ?? \"profile-id\",\n    path: _91id_93a557fzwYPHMeta?.path ?? \"/profile/:id()\",\n    meta: _91id_93a557fzwYPHMeta || {},\n    alias: _91id_93a557fzwYPHMeta?.alias || [],\n    redirect: _91id_93a557fzwYPHMeta?.redirect || undefined,\n    component: () => __vitePreload(() => import(\"/home/wilczany/projekty-studia/JS/JS-project/project-JS/pages/profile/[id].vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(m => m.default || m)\n  },\n  {\n    name: registerjM7vPVNuBJMeta?.name ?? \"register\",\n    path: registerjM7vPVNuBJMeta?.path ?? \"/register\",\n    meta: registerjM7vPVNuBJMeta || {},\n    alias: registerjM7vPVNuBJMeta?.alias || [],\n    redirect: registerjM7vPVNuBJMeta?.redirect || undefined,\n    component: () => __vitePreload(() => import(\"/home/wilczany/projekty-studia/JS/JS-project/project-JS/pages/register.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(m => m.default || m)\n  }\n]",
+      "start": 1703171020778,
+      "end": 1703171020778,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1703171020779,
+      "end": 1703171020779,
+      "order": "normal"
+    }
+  ]
+}
