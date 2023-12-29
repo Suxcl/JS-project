@@ -1,48 +1,26 @@
 <template>
     <div>
         <div>
-            <p>{{}}</p>
+            <p>{{usersList[0]}}</p>
+            <p>{{usersList[0].id}}</p>
+            <p>{{usersList[0].name}}</p>
+            <p>{{usersList[0].surname}}</p>
         </div>
     </div>
   </template>
   
   <script lang="ts" setup>
 
-      // import db from '~/plugins/db.js'
-
-      // async function getUsers() {
-      //   return new Promise((resolve, reject) => {
-      //     db.all('SELECT * FROM users', (error, rows) => {
-      //       if (error) {
-      //         reject(error)
-      //       } else {
-      //         resolve(rows)
-      //       }
-      //     })
-      //   })
-      // }
-
+      var usersList: any[] = []
+      
+      const usersData = await $fetch('/api/users/users')
+      usersData.users.forEach(data => {
+        usersList.push(data)
+        
+      })
 
       const appConfig = useAppConfig()
       console.log(appConfig.nuxtIcon)
   </script>
   
 
-
-
-<!-- <script setup>
-    import {getUsers} from '~/utils/data_fetching';
-    
-    export default {
-        data() {
-          return {
-            UserList: []
-          }  
-        },
-        methods:{
-            getData(){
-
-            },
-        }
-    }
-</script> -->
