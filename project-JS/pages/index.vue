@@ -7,13 +7,27 @@
   </template>
   
   <script lang="ts" setup>
-       const appConfig = useAppConfig()
-       console.log(appConfig.nuxtIcon)
+
+      // import db from '~/plugins/db.js'
+
+      // async function getUsers() {
+      //   return new Promise((resolve, reject) => {
+      //     db.all('SELECT * FROM users', (error, rows) => {
+      //       if (error) {
+      //         reject(error)
+      //       } else {
+      //         resolve(rows)
+      //       }
+      //     })
+      //   })
+      // }
+
+
+      const appConfig = useAppConfig()
+      console.log(appConfig.nuxtIcon)
   </script>
   
-  <style>
-  
-  </style>
+
 
 
 <!-- <script setup>

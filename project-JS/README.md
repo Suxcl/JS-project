@@ -2,6 +2,23 @@
 
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
+## database setup
+komendy odpalać w folderze projekt.js nie js.project
+
+# installing prisma
+npm install --save-dev prisma
+
+# for migrations
+npx prisma migrate dev --name init
+change init to name of the migration
+
+
+# PRISMA docs
+https://www.prisma.io/docs/orm/prisma-client/queries/crud#read
+
+
+
+
 ## Setup
 
 Make sure to install the dependencies:

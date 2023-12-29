@@ -3,26 +3,27 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { mkdirSync } from 'node:fs';
 import { parentPort, threadId } from 'node:worker_threads';
-import { defineEventHandler, handleCacheHeaders, splitCookiesString, isEvent, createEvent, getRequestHeader, eventHandler, setHeaders, sendRedirect, proxyRequest, setResponseHeader, send, getResponseStatus, setResponseStatus, setResponseHeaders, getRequestHeaders, createApp, createRouter as createRouter$1, toNodeListener, fetchWithEvent, lazyEventHandler, getQuery as getQuery$1, createError, getResponseStatusText } from 'file:///home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/h3/dist/index.mjs';
-import { getRequestDependencies, getPreloadLinks, getPrefetchLinks, createRenderer } from 'file:///home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/vue-bundle-renderer/dist/runtime.mjs';
-import { stringify, uneval } from 'file:///home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/devalue/index.js';
-import { renderToString } from 'file:///home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/vue/server-renderer/index.mjs';
-import { renderSSRHead } from 'file:///home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@unhead/ssr/dist/index.mjs';
-import { createFetch as createFetch$1, Headers as Headers$1 } from 'file:///home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/ofetch/dist/node.mjs';
-import destr from 'file:///home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/destr/dist/index.mjs';
-import { createCall, createFetch } from 'file:///home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/unenv/runtime/fetch/index.mjs';
-import { createHooks } from 'file:///home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/hookable/dist/index.mjs';
-import { snakeCase } from 'file:///home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/scule/dist/index.mjs';
-import { klona } from 'file:///home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/klona/dist/index.mjs';
-import defu, { defuFn } from 'file:///home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/defu/dist/defu.mjs';
-import { hash } from 'file:///home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/ohash/dist/index.mjs';
-import { parseURL, withoutBase, joinURL, getQuery, withQuery } from 'file:///home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/ufo/dist/index.mjs';
-import { createStorage, prefixStorage } from 'file:///home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/unstorage/dist/index.mjs';
-import unstorage_47drivers_47fs from 'file:///home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/unstorage/drivers/fs.mjs';
-import { toRouteMatcher, createRouter } from 'file:///home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/radix3/dist/index.mjs';
-import { version, unref } from 'file:///home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/vue/index.mjs';
-import { createServerHead as createServerHead$1 } from 'file:///home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/unhead/dist/index.mjs';
-import { defineHeadPlugin } from 'file:///home/wilczany/projekty-studia/JS/JS-project/project-JS/node_modules/@unhead/shared/dist/index.mjs';
+import { defineEventHandler, handleCacheHeaders, splitCookiesString, isEvent, createEvent, getRequestHeader, eventHandler, setHeaders, sendRedirect, proxyRequest, setResponseHeader, send, getResponseStatus, setResponseStatus, setResponseHeaders, getRequestHeaders, createApp, createRouter as createRouter$1, toNodeListener, fetchWithEvent, lazyEventHandler, createError, readBody, getQuery as getQuery$1, getResponseStatusText } from 'file:///home/sak/Documents/GitHub/JS-project/project-JS/node_modules/h3/dist/index.mjs';
+import { PrismaClient } from 'file:///home/sak/Documents/GitHub/JS-project/project-JS/node_modules/@prisma/client/index.js';
+import { getRequestDependencies, getPreloadLinks, getPrefetchLinks, createRenderer } from 'file:///home/sak/Documents/GitHub/JS-project/project-JS/node_modules/vue-bundle-renderer/dist/runtime.mjs';
+import { stringify, uneval } from 'file:///home/sak/Documents/GitHub/JS-project/project-JS/node_modules/devalue/index.js';
+import { renderToString } from 'file:///home/sak/Documents/GitHub/JS-project/project-JS/node_modules/vue/server-renderer/index.mjs';
+import { renderSSRHead } from 'file:///home/sak/Documents/GitHub/JS-project/project-JS/node_modules/@unhead/ssr/dist/index.mjs';
+import { createFetch as createFetch$1, Headers as Headers$1 } from 'file:///home/sak/Documents/GitHub/JS-project/project-JS/node_modules/ofetch/dist/node.mjs';
+import destr from 'file:///home/sak/Documents/GitHub/JS-project/project-JS/node_modules/destr/dist/index.mjs';
+import { createCall, createFetch } from 'file:///home/sak/Documents/GitHub/JS-project/project-JS/node_modules/unenv/runtime/fetch/index.mjs';
+import { createHooks } from 'file:///home/sak/Documents/GitHub/JS-project/project-JS/node_modules/hookable/dist/index.mjs';
+import { snakeCase } from 'file:///home/sak/Documents/GitHub/JS-project/project-JS/node_modules/scule/dist/index.mjs';
+import { klona } from 'file:///home/sak/Documents/GitHub/JS-project/project-JS/node_modules/klona/dist/index.mjs';
+import defu, { defuFn } from 'file:///home/sak/Documents/GitHub/JS-project/project-JS/node_modules/defu/dist/defu.mjs';
+import { hash } from 'file:///home/sak/Documents/GitHub/JS-project/project-JS/node_modules/ohash/dist/index.mjs';
+import { parseURL, withoutBase, joinURL, getQuery, withQuery } from 'file:///home/sak/Documents/GitHub/JS-project/project-JS/node_modules/ufo/dist/index.mjs';
+import { createStorage, prefixStorage } from 'file:///home/sak/Documents/GitHub/JS-project/project-JS/node_modules/unstorage/dist/index.mjs';
+import unstorage_47drivers_47fs from 'file:///home/sak/Documents/GitHub/JS-project/project-JS/node_modules/unstorage/drivers/fs.mjs';
+import { toRouteMatcher, createRouter } from 'file:///home/sak/Documents/GitHub/JS-project/project-JS/node_modules/radix3/dist/index.mjs';
+import { version, unref } from 'file:///home/sak/Documents/GitHub/JS-project/project-JS/node_modules/vue/index.mjs';
+import { createServerHead as createServerHead$1 } from 'file:///home/sak/Documents/GitHub/JS-project/project-JS/node_modules/unhead/dist/index.mjs';
+import { defineHeadPlugin } from 'file:///home/sak/Documents/GitHub/JS-project/project-JS/node_modules/@unhead/shared/dist/index.mjs';
 
 const r=Object.create(null),E=e=>globalThis.process?.env||globalThis._importMeta_.env||globalThis.Deno?.env.toObject()||globalThis.__env__||(e?r:globalThis),s=new Proxy(r,{get(e,o){return E()[o]??r[o]},has(e,o){const i=E();return o in i||o in r},set(e,o,i){const P=E(!0);return P[o]=i,!0},deleteProperty(e,o){if(!o)return !1;const i=E(!0);return delete i[o],!0},ownKeys(){const e=E(!0);return Object.keys(e)}}),t=typeof process<"u"&&process.env&&"development"||"",p=[["APPVEYOR"],["AWS_AMPLIFY","AWS_APP_ID",{ci:!0}],["AZURE_PIPELINES","SYSTEM_TEAMFOUNDATIONCOLLECTIONURI"],["AZURE_STATIC","INPUT_AZURE_STATIC_WEB_APPS_API_TOKEN"],["APPCIRCLE","AC_APPCIRCLE"],["BAMBOO","bamboo_planKey"],["BITBUCKET","BITBUCKET_COMMIT"],["BITRISE","BITRISE_IO"],["BUDDY","BUDDY_WORKSPACE_ID"],["BUILDKITE"],["CIRCLE","CIRCLECI"],["CIRRUS","CIRRUS_CI"],["CLOUDFLARE_PAGES","CF_PAGES",{ci:!0}],["CODEBUILD","CODEBUILD_BUILD_ARN"],["CODEFRESH","CF_BUILD_ID"],["DRONE"],["DRONE","DRONE_BUILD_EVENT"],["DSARI"],["GITHUB_ACTIONS"],["GITLAB","GITLAB_CI"],["GITLAB","CI_MERGE_REQUEST_ID"],["GOCD","GO_PIPELINE_LABEL"],["LAYERCI"],["HUDSON","HUDSON_URL"],["JENKINS","JENKINS_URL"],["MAGNUM"],["NETLIFY"],["NETLIFY","NETLIFY_LOCAL",{ci:!1}],["NEVERCODE"],["RENDER"],["SAIL","SAILCI"],["SEMAPHORE"],["SCREWDRIVER"],["SHIPPABLE"],["SOLANO","TDDIUM"],["STRIDER"],["TEAMCITY","TEAMCITY_VERSION"],["TRAVIS"],["VERCEL","NOW_BUILDER"],["VERCEL","VERCEL",{ci:!1}],["VERCEL","VERCEL_ENV",{ci:!1}],["APPCENTER","APPCENTER_BUILD_ID"],["CODESANDBOX","CODESANDBOX_SSE",{ci:!1}],["STACKBLITZ"],["STORMKIT"],["CLEAVR"],["ZEABUR"],["CODESPHERE","CODESPHERE_APP_ID",{ci:!0}]];function B(){if(globalThis.process?.env)for(const e of p){const o=e[1]||e[0];if(globalThis.process?.env[o])return {name:e[0].toLowerCase(),...e[2]}}return globalThis.process?.env?.SHELL==="/bin/jsh"&&globalThis.process?.versions?.webcontainer?{name:"stackblitz",ci:!1}:{name:"",ci:!1}}const I=B(),d=I.name;function n(e){return e?e!=="false":!1}const l=globalThis.process?.platform||"",T=n(s.CI)||I.ci!==!1,a=n(globalThis.process?.stdout&&globalThis.process?.stdout.isTTY);n(s.DEBUG);const c=t==="test"||n(s.TEST);n(s.MINIMAL)||T||c||!a;const C=/^win/i.test(l);!n(s.NO_COLOR)&&(n(s.FORCE_COLOR)||(a||C)&&s.TERM!=="dumb"||T);const R=(globalThis.process?.versions?.node||"").replace(/^v/,"")||null;Number(R?.split(".")[0])||null;const w=globalThis.process||Object.create(null),_={versions:{}};new Proxy(w,{get(e,o){if(o==="env")return s;if(o in e)return e[o];if(o in _)return _[o]}});const L=!!globalThis.Netlify,A=!!globalThis.EdgeRuntime,D=globalThis.navigator?.userAgent==="Cloudflare-Workers",O=!!globalThis.Deno,S=!!globalThis.__lagon__,N=globalThis.process?.release?.name==="node",u=!!globalThis.Bun||!!globalThis.process?.versions?.bun,b=!!globalThis.fastly,G=[[L,"netlify"],[A,"edge-light"],[D,"workerd"],[O,"deno"],[S,"lagon"],[N,"node"],[u,"bun"],[b,"fastly"]];function K(){const e=G.find(o=>o[0]);if(e)return {name:e[1]}}const g=K();g?.name||"";
 
@@ -137,7 +138,7 @@ new Proxy(/* @__PURE__ */ Object.create(null), {
   }
 });
 
-const serverAssets = [{"baseName":"server","dir":"/home/wilczany/projekty-studia/JS/JS-project/project-JS/server/assets"}];
+const serverAssets = [{"baseName":"server","dir":"/home/sak/Documents/GitHub/JS-project/project-JS/server/assets"}];
 
 const assets = createStorage();
 
@@ -149,11 +150,11 @@ const storage = createStorage({});
 
 storage.mount('/assets', assets);
 
-storage.mount('root', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"/home/wilczany/projekty-studia/JS/JS-project/project-JS","ignore":["**/node_modules/**","**/.git/**"]}));
-storage.mount('src', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"/home/wilczany/projekty-studia/JS/JS-project/project-JS/server","ignore":["**/node_modules/**","**/.git/**"]}));
-storage.mount('build', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"/home/wilczany/projekty-studia/JS/JS-project/project-JS/.nuxt","ignore":["**/node_modules/**","**/.git/**"]}));
-storage.mount('cache', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"/home/wilczany/projekty-studia/JS/JS-project/project-JS/.nuxt/cache","ignore":["**/node_modules/**","**/.git/**"]}));
-storage.mount('data', unstorage_47drivers_47fs({"driver":"fs","base":"/home/wilczany/projekty-studia/JS/JS-project/project-JS/.data/kv","ignore":["**/node_modules/**","**/.git/**"]}));
+storage.mount('root', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"/home/sak/Documents/GitHub/JS-project/project-JS","ignore":["**/node_modules/**","**/.git/**"]}));
+storage.mount('src', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"/home/sak/Documents/GitHub/JS-project/project-JS/server","ignore":["**/node_modules/**","**/.git/**"]}));
+storage.mount('build', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"/home/sak/Documents/GitHub/JS-project/project-JS/.nuxt","ignore":["**/node_modules/**","**/.git/**"]}));
+storage.mount('cache', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"/home/sak/Documents/GitHub/JS-project/project-JS/.nuxt/cache","ignore":["**/node_modules/**","**/.git/**"]}));
+storage.mount('data', unstorage_47drivers_47fs({"driver":"fs","base":"/home/sak/Documents/GitHub/JS-project/project-JS/.data/kv","ignore":["**/node_modules/**","**/.git/**"]}));
 
 function useStorage(base = "") {
   return base ? prefixStorage(storage, base) : storage;
@@ -580,14 +581,14 @@ if (!window.__NUXT_DEVTOOLS_TIME_METRIC__) {
 window.__NUXT_DEVTOOLS_TIME_METRIC__.appInit = Date.now()
 `;
 
-const _BWfGFNTyGY = (function(nitro) {
+const _Pg53X5x2mm = (function(nitro) {
   nitro.hooks.hook("render:html", (htmlContext) => {
     htmlContext.head.push(`<script>${script}<\/script>`);
   });
 });
 
 const plugins = [
-  _BWfGFNTyGY
+  _Pg53X5x2mm
 ];
 
 function defineRenderHandler(handler) {
@@ -675,11 +676,21 @@ const errorHandler = (async function errorhandler(error, event) {
   return send(event, html);
 });
 
-const _lazy_RkOnUw = () => Promise.resolve().then(function () { return renderer$1; });
+const _lazy_mW4BQb = () => Promise.resolve().then(function () { return _id__delete$1; });
+const _lazy_TJwfDV = () => Promise.resolve().then(function () { return _id__put$1; });
+const _lazy_PAbmne = () => Promise.resolve().then(function () { return _id_$1; });
+const _lazy_l4Toz1 = () => Promise.resolve().then(function () { return users_post$1; });
+const _lazy_sAZ10E = () => Promise.resolve().then(function () { return users$1; });
+const _lazy_YOIb3P = () => Promise.resolve().then(function () { return renderer$1; });
 
 const handlers = [
-  { route: '/__nuxt_error', handler: _lazy_RkOnUw, lazy: true, middleware: false, method: undefined },
-  { route: '/**', handler: _lazy_RkOnUw, lazy: true, middleware: false, method: undefined }
+  { route: '/api/users/:id', handler: _lazy_mW4BQb, lazy: true, middleware: false, method: "delete" },
+  { route: '/api/users/:id', handler: _lazy_TJwfDV, lazy: true, middleware: false, method: "put" },
+  { route: '/api/users/:id', handler: _lazy_PAbmne, lazy: true, middleware: false, method: undefined },
+  { route: '/api/users/users', handler: _lazy_l4Toz1, lazy: true, middleware: false, method: "post" },
+  { route: '/api/users/users', handler: _lazy_sAZ10E, lazy: true, middleware: false, method: undefined },
+  { route: '/__nuxt_error', handler: _lazy_YOIb3P, lazy: true, middleware: false, method: undefined },
+  { route: '/**', handler: _lazy_YOIb3P, lazy: true, middleware: false, method: undefined }
 ];
 
 function createNitroApp() {
@@ -863,6 +874,124 @@ const errorDev = /*#__PURE__*/Object.freeze({
     template: template$1
 });
 
+const prisma$4 = new PrismaClient();
+const _id__delete = defineEventHandler(async (event) => {
+  const id = parseInt(event.context.params.id);
+  if (!Number.isInteger(id)) {
+    throw createError({
+      statusCode: 400,
+      statusMessage: "ID should be an integer"
+    });
+  } else {
+    await prisma$4.user.delete({
+      where: {
+        id
+      }
+    });
+  }
+  return `User with id ${id} deleted successfully`;
+});
+
+const _id__delete$1 = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    default: _id__delete
+});
+
+const prisma$3 = new PrismaClient();
+const _id__put = defineEventHandler(async (event) => {
+  const id = parseInt(event.context.params.id);
+  const body = await readBody(event);
+  let user = null;
+  if (!Number.isInteger(id)) {
+    throw createError({
+      statusCode: 400,
+      statusMessage: "ID should be an integer"
+    });
+  } else {
+    user = await prisma$3.user.update({
+      where: {
+        id
+      },
+      data: {
+        email: body.email,
+        password: body.password,
+        name: body.name,
+        surname: body.surname
+      }
+    });
+  }
+  return {
+    user
+  };
+});
+
+const _id__put$1 = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    default: _id__put
+});
+
+const prisma$2 = new PrismaClient();
+const _id_ = defineEventHandler(async (event) => {
+  const id = parseInt(event.context.params.id);
+  let user = null;
+  if (!Number.isInteger(id)) {
+    throw createError({
+      statusCode: 400,
+      statusMessage: "ID should be an integer"
+    });
+  } else {
+    user = await prisma$2.user.findUnique({
+      where: {
+        id
+      }
+    });
+  }
+  return {
+    user
+  };
+});
+
+const _id_$1 = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    default: _id_
+});
+
+const prisma$1 = new PrismaClient();
+const users_post = defineEventHandler(async (event) => {
+  const body = await readBody(event);
+  let user;
+  user = {
+    email: body.email,
+    password: body.password,
+    name: body.name,
+    surname: body.surname
+  };
+  const createUser = await prisma$1.user.create({ data: user });
+  return {
+    event,
+    user,
+    createUser
+  };
+});
+
+const users_post$1 = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    default: users_post
+});
+
+const prisma = new PrismaClient();
+const users = defineEventHandler(async (event) => {
+  const users = await prisma.user.findMany();
+  return {
+    users
+  };
+});
+
+const users$1 = /*#__PURE__*/Object.freeze({
+    __proto__: null,
+    default: users
+});
+
 const Vue3 = version.startsWith("3");
 
 function resolveUnref(r) {
@@ -938,8 +1067,8 @@ function publicAssetsURL(...path) {
 
 globalThis.__buildAssetsURL = buildAssetsURL;
 globalThis.__publicAssetsURL = publicAssetsURL;
-const getClientManifest = () => import('file:///home/wilczany/projekty-studia/JS/JS-project/project-JS/.nuxt/dist/server/client.manifest.mjs').then((r) => r.default || r).then((r) => typeof r === "function" ? r() : r);
-const getServerEntry = () => import('file:///home/wilczany/projekty-studia/JS/JS-project/project-JS/.nuxt/dist/server/server.mjs').then((r) => r.default || r);
+const getClientManifest = () => import('file:///home/sak/Documents/GitHub/JS-project/project-JS/.nuxt/dist/server/client.manifest.mjs').then((r) => r.default || r).then((r) => typeof r === "function" ? r() : r);
+const getServerEntry = () => import('file:///home/sak/Documents/GitHub/JS-project/project-JS/.nuxt/dist/server/server.mjs').then((r) => r.default || r);
 const getSSRStyles = lazyCachedFunction(() => Promise.resolve().then(function () { return styles$1; }).then((r) => r.default || r));
 const getSSRRenderer = lazyCachedFunction(async () => {
   const manifest = await getClientManifest();

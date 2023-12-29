@@ -15,6 +15,6 @@ if (import.meta.hot) {
   })
 }
 
-import cfg0 from "/home/wilczany/projekty-studia/JS/JS-project/project-JS/app.config.ts"
+import cfg0 from "/home/sak/Documents/GitHub/JS-project/project-JS/app.config.ts"
 
 export default /* #__PURE__ */ defuFn(cfg0, inlineConfig)

@@ -3,7 +3,7 @@
 // App Config
 import type { Defu } from 'defu'
 
-import type { default as appConfig0 } from "/home/wilczany/projekty-studia/JS/JS-project/project-JS/app.config";
+import type { default as appConfig0 } from "/home/sak/Documents/GitHub/JS-project/project-JS/app.config";
 
 type UserAppConfig = Defu<{}, [typeof appConfig0]>
 
