@@ -19,6 +19,7 @@
     "vue-router": "^4.2.5"
   },
   "dependencies": {
-    "@prisma/client": "5.7.1"
+    "@prisma/client": "5.7.1",
+    "vue-toastification": "^2.0.0-rc.5"
   }
 }

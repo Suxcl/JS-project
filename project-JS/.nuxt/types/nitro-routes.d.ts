@@ -3,10 +3,22 @@ import type { Serialize, Simplify } from 'nitropack'
 declare module 'nitropack' {
   type Awaited<T> = T extends PromiseLike<infer U> ? Awaited<U> : T
   interface InternalApi {
+    '/api/posts/:id': {
+      'delete': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/posts/[id].delete').default>>>>
+      'put': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/posts/[id].put').default>>>>
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/posts/[id]').default>>>>
+    }
+    '/api/posts/posts': {
+      'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/posts/posts.post').default>>>>
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/posts/posts').default>>>>
+    }
     '/api/users/:id': {
       'delete': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/users/[id].delete').default>>>>
       'put': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/users/[id].put').default>>>>
       'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/users/[id]').default>>>>
+    }
+    '/api/users/getUserByEmail.post.': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/users/getUserByEmail.post.').default>>>>
     }
     '/api/users/users': {
       'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/users/users.post').default>>>>

@@ -1,10 +1,54 @@
 <template>
-  <div class="bar">
-
-  </div>
+  <nav class="container mx-auto p-4 flex justify-between">
+          <ul class="flex gap-4">
+            <!-- Home -->
+            <li>
+              <nuxt-link to="/">
+                Home <Icon name="material-symbols:home-rounded" color="" />
+              </nuxt-link> |
+            </li>
+            <!-- Login -->
+            <li v-if="!loggedUser">
+              <nuxt-link to="/login">
+                Login <Icon name="ic:baseline-log-in" />
+              </nuxt-link>
+            </li>
+            <!-- Register -->    
+            <li v-if="!loggedUser">
+              <nuxt-link to="/register">
+                Register <Icon name="material-symbols:assignment-add-outline-rounded" />
+              </nuxt-link>
+            </li>
+            <!-- Logout -->
+            <li v-if="loggedUser" >
+              <nuxt-link to="/" @click="logOut()">
+                Logout <Icon name="material-symbols:assignment-add-outline-rounded" />
+              </nuxt-link>
+            </li>        
+            <!-- Profile -->
+            <li v-if="loggedUser" >
+              <nuxt-link to="/profile/myProfile">
+                Profile <Icon name="material-symbols:account-circle-full" />
+              </nuxt-link>
+            </li>
+          </ul>
+        </nav>
 </template>
 
 <script lang="ts" setup>
+
+  const auth_cookie = useCookie('auth', { watch: true })
+    var loggedUser = false
+    if (auth_cookie && auth_cookie.value !==null){
+      loggedUser = isSomeoneLogged()
+    }
+
+  async function logOut(){
+    auth_cookie.value = ''
+    await refreshNuxtData()
+    navigateTo({path: '/'})
+
+  }
 
 </script>
 

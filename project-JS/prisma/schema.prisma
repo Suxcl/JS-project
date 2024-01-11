@@ -10,35 +10,86 @@ generator client {
 model Comment{
   id        Int      @id @default(autoincrement())
   content   String
+  url       CommentUrl[]
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   author    User?    @relation(fields: [author_id], references: [id])
   author_id Int?
   post      Post?    @relation(fields: [post_id], references: [id])
-  post_id Int
+  post_id   Int?
 
+}
+
+model CommentUrl {
+  url     String
+  commentId  Int
+  comment    Comment @relation(fields: [commentId], references: [id], onDelete: Cascade)
+
+  @@id([url, commentId])
 }
 
 model Post {
-  id        Int      @id @default(autoincrement())
-  title     String
-  content   String?
-  comments Comment[]
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  private Boolean  @default(false)
-  author    User?    @relation(fields: [authorId], references: [id])
-  authorId  Int?
+  id              Int      @id @default(autoincrement())
+  title           String
+  content         String
+  url             PostUrl[]
+  comments        Comment[]
+  likes           Int      @default(0)
+  users_liking    UserLikePost[]
+  dislikes        Int      @default(0)
+  users_disliking UserDislikePost[]
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  private         Boolean  @default(false)
+  author          User?    @relation(fields: [authorId], references: [id])
+  authorId        Int?
+}
+
+model PostUrl{
+  url     String
+  postId  Int
+  post    Post @relation(fields: [postId], references: [id], onDelete: Cascade)
+
+  @@id([url, postId])
 }
 
 model User {
-  id    Int     @id @default(autoincrement())
-  email String  @unique
-  password String 
-  name  String?
-  surname String?
-  createdAt DateTime @default(now())
-  posts Post[]
-  comments Comment[]
+  id              Int     @id @default(autoincrement())
+  email           String  @unique
+  password        String 
+  name            String?
+  surname         String?
+  createdAt       DateTime @default(now())
+  posts           Post[]
+  friends         User[] @relation("friends")
+  friendsRelation User[] @relation("friends")
+  comments        Comment[]
+  posts_liked     UserLikePost[]
+  posts_disliked  UserDislikePost[]
+  profilePicUrl   String @default("~/assets/img/prodilePic/default.png")
+}
+
+model UserLikePost {
+  post      Post @relation(fields: [postId], references: [id])
+  postId    Int
+  user      User @relation(fields: [userId], references: [id])
+  userId    Int
+  @@id([postId, userId])
+}
+
+model UserDislikePost{
+  post      Post @relation(fields: [postId], references: [id])
+  postId    Int
+  user      User @relation(fields: [userId], references: [id])
+  userId    Int
+  @@id([postId, userId])
+}
+
+model Invite{
+  id              Int     @id @default(autoincrement())
+  user_from_id    Int
+  user_to_id      Int
+  status          Int @default(1)
+  // statuses 1 - pending, 2 - accepted, 3 -rejected
 }
 
