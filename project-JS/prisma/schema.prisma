@@ -13,10 +13,10 @@ model Comment{
   url       CommentUrl[]
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  author    User?    @relation(fields: [author_id], references: [id])
-  author_id Int?
-  post      Post?    @relation(fields: [post_id], references: [id])
-  post_id   Int?
+  author    User?    @relation(fields: [authorId], references: [id])
+  authorId Int?
+  post      Post?    @relation(fields: [postId], references: [id])
+  postId   Int?
 
 }
 
@@ -61,12 +61,15 @@ model User {
   surname         String?
   createdAt       DateTime @default(now())
   posts           Post[]
-  friends         User[] @relation("friends")
-  friendsRelation User[] @relation("friends")
   comments        Comment[]
   posts_liked     UserLikePost[]
   posts_disliked  UserDislikePost[]
   profilePicUrl   String @default("~/assets/img/prodilePic/default.png")
+}
+model Friend{
+  user1Id       Int
+  user2Id       Int
+  @@id([user1Id, user2Id])
 }
 
 model UserLikePost {
@@ -93,3 +96,22 @@ model Invite{
   // statuses 1 - pending, 2 - accepted, 3 -rejected
 }
 
+model chat {
+  id              Int     @id @default(autoincrement())
+  name            String  
+}
+
+model chatUser{
+  chatId          Int
+  chatUser        Int
+  @@id([chatId, chatUser])
+}
+
+model chatMessage{
+  id              Int     @id @default(autoincrement())
+  content         String
+  authorId        Int
+  chatId          Int        
+  createdAt       DateTime @default(now())
+  hide            Boolean @default(false)
+}

@@ -17,9 +17,10 @@ change init to name of the migration
 https://www.prisma.io/docs/orm/prisma-client/queries/crud#read
 
 
-##Toast
+## To install
 
 npm install vue-toastification@next
+npm install vue-cryptojs
 
 ## Setup
 

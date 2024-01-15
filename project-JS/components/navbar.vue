@@ -37,15 +37,16 @@
 
 <script lang="ts" setup>
 
-  const auth_cookie = useCookie('auth', { watch: true })
+
+  const logUserId  = getLoggedUserId()
+
     var loggedUser = false
-    if (auth_cookie && auth_cookie.value !==null){
+    if (logUserId !== null){
       loggedUser = isSomeoneLogged()
     }
 
   async function logOut(){
-    auth_cookie.value = ''
-    await refreshNuxtData()
+    logoutUser()
     navigateTo({path: '/'})
 
   }

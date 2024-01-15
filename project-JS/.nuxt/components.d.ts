@@ -2,6 +2,8 @@
 declare module 'vue' {
   export interface GlobalComponents {
     'Navbar': typeof import("../components/navbar.vue")['default']
+    'Post': typeof import("../components/post.vue")['default']
+    'PostForm': typeof import("../components/postForm.vue")['default']
     'RegisterFeedback': typeof import("../components/registerFeedback.vue")['default']
     'NuxtWelcome': typeof import("../node_modules/@nuxt/ui-templates/dist/templates/welcome.vue")['default']
     'NuxtLayout': typeof import("../node_modules/nuxt/dist/app/components/nuxt-layout")['default']
@@ -26,6 +28,8 @@ declare module 'vue' {
     'Html': typeof import("../node_modules/nuxt/dist/head/runtime/components")['Html']
     'Body': typeof import("../node_modules/nuxt/dist/head/runtime/components")['Body']
     'LazyNavbar': typeof import("../components/navbar.vue")['default']
+    'LazyPost': typeof import("../components/post.vue")['default']
+    'LazyPostForm': typeof import("../components/postForm.vue")['default']
     'LazyRegisterFeedback': typeof import("../components/registerFeedback.vue")['default']
     'LazyNuxtWelcome': typeof import("../node_modules/@nuxt/ui-templates/dist/templates/welcome.vue")['default']
     'LazyNuxtLayout': typeof import("../node_modules/nuxt/dist/app/components/nuxt-layout")['default']
@@ -53,6 +57,8 @@ declare module 'vue' {
 }
 
 export const Navbar: typeof import("../components/navbar.vue")['default']
+export const Post: typeof import("../components/post.vue")['default']
+export const PostForm: typeof import("../components/postForm.vue")['default']
 export const RegisterFeedback: typeof import("../components/registerFeedback.vue")['default']
 export const NuxtWelcome: typeof import("../node_modules/@nuxt/ui-templates/dist/templates/welcome.vue")['default']
 export const NuxtLayout: typeof import("../node_modules/nuxt/dist/app/components/nuxt-layout")['default']
@@ -77,6 +83,8 @@ export const Head: typeof import("../node_modules/nuxt/dist/head/runtime/compone
 export const Html: typeof import("../node_modules/nuxt/dist/head/runtime/components")['Html']
 export const Body: typeof import("../node_modules/nuxt/dist/head/runtime/components")['Body']
 export const LazyNavbar: typeof import("../components/navbar.vue")['default']
+export const LazyPost: typeof import("../components/post.vue")['default']
+export const LazyPostForm: typeof import("../components/postForm.vue")['default']
 export const LazyRegisterFeedback: typeof import("../components/registerFeedback.vue")['default']
 export const LazyNuxtWelcome: typeof import("../node_modules/@nuxt/ui-templates/dist/templates/welcome.vue")['default']
 export const LazyNuxtLayout: typeof import("../node_modules/nuxt/dist/app/components/nuxt-layout")['default']

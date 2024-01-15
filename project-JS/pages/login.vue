@@ -34,7 +34,7 @@
       isLoading.value = false;
       return;
     } 
-    const { data, pending, error, refresh } = await useFetch('/api/users/getUserByEmail.post.', {
+    const { data, pending, error, refresh } = await useFetch('/api/users/getUserByEmail', {
         method: 'POST',
         body: {
             email: email.value
@@ -48,7 +48,7 @@
         toast.success("Success, you logged in! Redirecting to main page", {
           timeout: 2000
         });
-        loginUser(email.value)
+        loginUser(email.value, data.value.user.id)
         navigateTo({path: '/'})  
       }else{
         toast.error("We could not find user with these credentials", {

@@ -5,7 +5,7 @@ const prisma = new PrismaClient
 
 export default defineEventHandler(async (event) => {
 
-    const id = parseInt(event.context.params.id) as number
+    const id = parseInt(event.context.params.id) as number 
     
     if (!Number.isInteger(id)) {
         idShouldBeInteger()
@@ -22,5 +22,4 @@ export default defineEventHandler(async (event) => {
         })
     }
     return `Post with id ${id} deleted successfully with urls`
-
-    })
+})

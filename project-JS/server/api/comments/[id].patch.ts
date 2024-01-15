@@ -5,22 +5,25 @@ const prisma = new PrismaClient
 export default defineEventHandler(async (event) => {
 
     const id = parseInt(event.context.params.id) as number
-    let user = null
+    const body = await readBody(event)
+    let comment = null
     
     if (!Number.isInteger(id)) {
         throw createError({
             statusCode: 400,
-            statusMessage: 'ID should be an integer',
+            statusMessage: 'Comment Patch ID should be an integer',
         })
     }else{
-        user = await prisma.user.findUnique({
+        comment = await prisma.comment.update({
             where: {
                 id: id
+            },
+            data: {
+                content: body.content
             }
         })
     }
     return {
-        user: user
+        edited_comment: comment
     }
-
     })

@@ -5,27 +5,24 @@ const prisma = new PrismaClient
 export default defineEventHandler(async (event) => {
 
     const id = parseInt(event.context.params.id) as number
-    const body = await readBody(event)
-    let post = null
-    
+    console.log("nigger")
     if (!Number.isInteger(id)) {
         throw createError({
             statusCode: 400,
             statusMessage: 'ID should be an integer',
         })
     }else{
-        post = await prisma.post.update({
+        await prisma.comment.delete({
             where: {
                 id: id
-            },
-            data: {
-                title: body.title,
-                content: body.content
+            }
+        })
+        await prisma.commentUrl.deleteMany({
+            where: {
+                commentId: id
             }
         })
     }
-    return {
-        edited_post: post
-    }
+    return `Comment and urls with id ${id} deleted successfully`
 
     })

@@ -7,7 +7,7 @@ export default defineEventHandler(async (event) => {
     const regex_email = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
     let user = null
 
-    console.log('getUserByEmail')
+    // console.log('getUserByEmail')
     
     if (!regex_email.test(body.email)) {
         throw createError({

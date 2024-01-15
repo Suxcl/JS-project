@@ -3,26 +3,101 @@ import type { Serialize, Simplify } from 'nitropack'
 declare module 'nitropack' {
   type Awaited<T> = T extends PromiseLike<infer U> ? Awaited<U> : T
   interface InternalApi {
+    '/api/chats/:id': {
+      'delete': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/chats/[id].delete').default>>>>
+      'patch': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/chats/[id].patch').default>>>>
+    }
+    '/api/chats/chat': {
+      'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/chats/chat.post').default>>>>
+    }
+    '/api/chats/chatMessages/:id': {
+      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/chats/chatMessages/[id].get').default>>>>
+      'patch': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/chats/chatMessages/[id].patch').default>>>>
+    }
+    '/api/chats/chatMessages/hideMessage': {
+      'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/chats/chatMessages/hideMessage.post').default>>>>
+    }
+    '/api/chats/chatMessages/message': {
+      'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/chats/chatMessages/message.post').default>>>>
+    }
+    '/api/chats/chats': {
+      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/chats/chats.get').default>>>>
+    }
+    '/api/chats/chatUsers/:chatId': {
+      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/chats/chatUsers/[chatId].get').default>>>>
+    }
+    '/api/chats/chatUsers/addUser': {
+      'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/chats/chatUsers/addUser.post').default>>>>
+    }
+    '/api/chats/chatUsers/chatsUsers': {
+      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/chats/chatUsers/chatsUsers.get').default>>>>
+    }
+    '/api/chats/chatUsers/removeUser': {
+      'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/chats/chatUsers/removeUser.post').default>>>>
+    }
+    '/api/comments/:id': {
+      'delete': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/comments/[id].delete').default>>>>
+      'patch': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/comments/[id].patch').default>>>>
+    }
+    '/api/comments/comment': {
+      'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/comments/comment.post').default>>>>
+    }
+    '/api/invites/fromUser': {
+      'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/invites/fromUser.post').default>>>>
+    }
+    '/api/invites/invite': {
+      'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/invites/invite.post').default>>>>
+    }
+    '/api/invites/response': {
+      'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/invites/response.post').default>>>>
+    }
+    '/api/invites/toUser': {
+      'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/invites/toUser.post').default>>>>
+    }
     '/api/posts/:id': {
       'delete': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/posts/[id].delete').default>>>>
-      'put': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/posts/[id].put').default>>>>
-      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/posts/[id]').default>>>>
+      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/posts/[id].get').default>>>>
+      'patch': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/posts/[id].patch').default>>>>
+    }
+    '/api/posts/dislikeClicked': {
+      'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/posts/dislikeClicked.post').default>>>>
+    }
+    '/api/posts/likeClicked': {
+      'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/posts/likeClicked.post').default>>>>
+    }
+    '/api/posts/postComments/:id': {
+      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/posts/postComments/[id].get').default>>>>
     }
     '/api/posts/posts': {
+      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/posts/posts.get').default>>>>
       'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/posts/posts.post').default>>>>
-      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/posts/posts').default>>>>
+    }
+    '/api/posts/postUrls/:id': {
+      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/posts/postUrls/[id].get').default>>>>
     }
     '/api/users/:id': {
       'delete': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/users/[id].delete').default>>>>
-      'put': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/users/[id].put').default>>>>
-      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/users/[id]').default>>>>
+      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/users/[id].get').default>>>>
+      'patch': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/users/[id].patch').default>>>>
     }
-    '/api/users/getUserByEmail.post.': {
-      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/users/getUserByEmail.post.').default>>>>
+    '/api/users/friends/:userId': {
+      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/users/friends/[userId].get').default>>>>
+    }
+    '/api/users/friends/addFriend': {
+      'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/users/friends/addFriend.post').default>>>>
+    }
+    '/api/users/friends/checkIfFriends': {
+      'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/users/friends/checkIfFriends.post').default>>>>
+    }
+    '/api/users/friends/removeFriend': {
+      'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/users/friends/removeFriend.post').default>>>>
+    }
+    '/api/users/getUserByEmail': {
+      'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/users/getUserByEmail.post').default>>>>
     }
     '/api/users/users': {
+      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/users/users.get').default>>>>
       'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/users/users.post').default>>>>
-      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/users/users').default>>>>
     }
     '/__nuxt_error': {
       'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/nuxt/dist/core/runtime/nitro/renderer').default>>>>

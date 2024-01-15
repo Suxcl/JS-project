@@ -1,8 +1,14 @@
-export const loginUser = (email:string) =>{
+export const loginUser = (email:string, id:number) =>{
     const auth_cookie = useCookie('auth')
-    auth_cookie.value = email   
-    console.log('Storing email in cookie')
-    console.log('Email', email)
-    console.log('Cookie Email', auth_cookie.value)
+
+    auth_cookie.value = JSON.stringify(
+        {
+            email: email,
+            id: id
+        }
+    )    
+    console.log('Storing log user in cookie')
+    console.log('Cookie', auth_cookie.value)
+
 }
 

@@ -113,54 +113,18 @@ const submitForm = async () => {
     isLoading.value = false;
     return;
   }
-
-  setTimeout(() => {
-      // If the execution reaches here, it means that all checks have passed.
-      success.value = true;
-      formFeedback.value = 'success';
-      isLoading.value = false;
-
-      const { data, pending, error, refresh } = useFetch('/api/users/users', {
-      method: 'POST',
-      body: {
-          email: email.value,
-          password: password1.value,
-          name: name.value,
-          surname: surname.value
-      },
-      onRequestError({request, options, error}){
-        console.log('===============================')
-        console.log('onRequestError')
-        console.log('There was ana error in fetching')
-        console.log(error.cause)
-        console.log(error.message)
-        console.log('-------------------------------')
-        console.log(request)
-        console.log(options)
-        console.log(error)
-        console.log('===============================')
-      },
-      onResponse({ request, response, options }) {
-        console.log('===============================')
-        console.log('onResponse')
-        console.log(request)
-        console.log(response)
-        console.log(options)
-        console.log('===============================')
-        loginUser(email.value)
-        console.log(data.value?.createUser);
-        navigateTo({path: '/'})  
-      },
-      onResponseError({ request, response, options }) {
-        console.log('===============================')
-        console.log('onResponseError')
-        console.log(request)
-        console.log(response)
-        console.log(options)
-        console.log('===============================')
-      }
-    })
-  }, 3000);
+  const answer = await $fetch('/api/users/users', {
+    method: 'POST',
+    body: {
+      email: email.value,
+      password: password1.value,
+      name: name.value,
+      surname: surname.value
+    }
+  })
+  success.value = true;
+  formFeedback.value = 'success';
+  isLoading.value = false;
   toast.success("Success, you created your own account, redirecting to main page", {
       timeout: 2000
   });
