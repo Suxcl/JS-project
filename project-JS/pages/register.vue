@@ -106,13 +106,20 @@ const submitForm = async () => {
     isLoading.value = false;
     return;
   }
-  const find_user = await getUserByEmail(email.value)
-  if(find_user){
-    formFeedback.value = 'userExists';
-    success.value = false;
-    isLoading.value = false;
-    return;
-  }
+  const find_user = await $fetch('/api/users/getUserByEmail', 
+    {
+      method: 'POST',
+      body: {email: email.value} 
+    }).then(
+      res => {
+        if(res?.user?.email === email.value){
+          formFeedback.value = 'userExists';
+          success.value = false;
+          isLoading.value = false;
+          return;      
+        }
+      }
+    ).catch(err => console.log(err));
   const answer = await $fetch('/api/users/users', {
     method: 'POST',
     body: {
@@ -121,12 +128,22 @@ const submitForm = async () => {
       name: name.value,
       surname: surname.value
     }
+  }).then(
+    res => {
+      success.value = true;
+      formFeedback.value = 'success';
+      isLoading.value = false;
+      toast.success("Success, you created your own account, redirecting to main page", {
+          timeout: 2000
+      });    
+      navigateTo({path: '/'})
+    }
+  ).catch(err => {
+    success.value = false;
+    toast.error("Something went wrong with registration \n Database issue", {
+          timeout: 2000
+      });    
   })
-  success.value = true;
-  formFeedback.value = 'success';
-  isLoading.value = false;
-  toast.success("Success, you created your own account, redirecting to main page", {
-      timeout: 2000
-  });
+  
 }
 </script>

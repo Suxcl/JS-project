@@ -25,6 +25,7 @@ export { getLoggedUserId } from '../composables/getLoggedUserId';
 export { hash } from '../composables/hash';
 export { isSomeoneLogged } from '../composables/isSomeoneLogged';
 export { loginUser } from '../composables/loginUser';
+export { logoutUser } from '../composables/logoutUser';
 export { toastNotLoginError } from '../composables/toastNotLoginError';
 export { useNuxtDevTools } from '../node_modules/@nuxt/devtools/dist/runtime/use-nuxt-devtools';
 export { definePageMeta } from '../node_modules/nuxt/dist/pages/runtime/composables';

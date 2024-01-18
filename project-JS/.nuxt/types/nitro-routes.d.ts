@@ -62,6 +62,9 @@ declare module 'nitropack' {
     '/api/posts/dislikeClicked': {
       'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/posts/dislikeClicked.post').default>>>>
     }
+    '/api/posts/getUserByEmail': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/posts/getUserByEmail').default>>>>
+    }
     '/api/posts/likeClicked': {
       'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/posts/likeClicked.post').default>>>>
     }
