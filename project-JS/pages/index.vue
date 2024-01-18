@@ -4,7 +4,8 @@
         <p>Users</p>
         <div>
           <ul v-for="user in usersList">
-            <p>{{ user }}</p>
+            <NuxtLink :to="`/profile/${user.id}`"><p>{{ user }}</p></NuxtLink>
+            
           </ul>
         </div>
       </div>

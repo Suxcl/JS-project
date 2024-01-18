@@ -3,5 +3,6 @@ export const logoutUser = () =>{
     auth_cookie.value = ''
     console.log('Logging out user')
     console.log('Cookie', auth_cookie.value)
+    reloadNuxtApp()  
 }
 

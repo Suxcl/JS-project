@@ -8,11 +8,19 @@ export default defineEventHandler(async (event) => {
     const friends = await prisma.friend.findMany({
         where: {
             user1Id: id
+        },
+        select: {
+            user2Id: true
         }
     })
+    var friendsReturn: unknown[] = []
+    friends.forEach(async (friend) => {
+        friendsReturn.push(await $fetch(`api/users/${friend.user2Id}`))
+    })
+    
     
     return {
-        friends: friends
+        friends: friends.map((data) => data.user2Id)
     }
 
     })

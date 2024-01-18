@@ -96,18 +96,18 @@ model Invite{
   // statuses 1 - pending, 2 - accepted, 3 -rejected
 }
 
-model chat {
+model Chat {
   id              Int     @id @default(autoincrement())
   name            String  
 }
 
-model chatUser{
+model ChatUser{
   chatId          Int
   chatUser        Int
   @@id([chatId, chatUser])
 }
 
-model chatMessage{
+model ChatMessage{
   id              Int     @id @default(autoincrement())
   content         String
   authorId        Int

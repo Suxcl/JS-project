@@ -54,6 +54,9 @@ declare module 'nitropack' {
     '/api/invites/toUser': {
       'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/invites/toUser.post').default>>>>
     }
+    '/api/invites/toUser/:id': {
+      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/invites/toUser/[id].get').default>>>>
+    }
     '/api/posts/:id': {
       'delete': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/posts/[id].delete').default>>>>
       'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/posts/[id].get').default>>>>
@@ -61,9 +64,6 @@ declare module 'nitropack' {
     }
     '/api/posts/dislikeClicked': {
       'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/posts/dislikeClicked.post').default>>>>
-    }
-    '/api/posts/getUserByEmail': {
-      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/posts/getUserByEmail').default>>>>
     }
     '/api/posts/likeClicked': {
       'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/posts/likeClicked.post').default>>>>
@@ -83,6 +83,9 @@ declare module 'nitropack' {
       'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/users/[id].get').default>>>>
       'patch': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/users/[id].patch').default>>>>
     }
+    '/api/users/chats/:id': {
+      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/users/chats/[id].get').default>>>>
+    }
     '/api/users/friends/:userId': {
       'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/users/friends/[userId].get').default>>>>
     }
@@ -97,6 +100,10 @@ declare module 'nitropack' {
     }
     '/api/users/getUserByEmail': {
       'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/users/getUserByEmail.post').default>>>>
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/users/getUserByEmail').default>>>>
+    }
+    '/api/users/posts/:id': {
+      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/users/posts/[id].get').default>>>>
     }
     '/api/users/users': {
       'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/users/users.get').default>>>>

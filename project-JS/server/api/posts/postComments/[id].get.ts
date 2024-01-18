@@ -32,6 +32,6 @@ export default defineEventHandler( async (event) => {
     }
     return {
         comments: comments,
-        commentsUrl: commentsUrls
+        commentsUrls: commentsUrls
     }
   })

@@ -41,33 +41,22 @@
         </div>
 
     <div>
-        <p>Comments</p>
-
+        <Comments :comments="postComments" :postId="props.post.id"/>
     </div>
     </div>
-    
+    <hr>
 </template>
 
 
 <script setup lang="ts">
+    import type { Post, Comment} from '@prisma/client';
     // props for component
-    interface Post {
-        id: number
-        title: string
-        content: string
-        authorId: number
-        likes: number
-        dislikes: number
-        createdAt: string
-        updatedAt: string
-        private: boolean
-    }
     const props = defineProps<({
         post: Post
     })>()
 
     const loggedUserId = getLoggedUserId()
-
+    const postComments:Comment[] = (await $fetch(`/api/posts/postComments/${props.post.id}`) as any).comments
 
     const editPost = async (id:number) =>{
         console.log("edit", id)

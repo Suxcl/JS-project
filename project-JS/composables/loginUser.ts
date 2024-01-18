@@ -1,3 +1,4 @@
+import Vue from 'vue';
 export const loginUser = (email:string, id:number) =>{
     const auth_cookie = useCookie('auth')
 
@@ -9,6 +10,8 @@ export const loginUser = (email:string, id:number) =>{
     )    
     console.log('Storing log user in cookie')
     console.log('Cookie', auth_cookie.value)
+
+    
 
 }
 

@@ -21,5 +21,8 @@
     "peacock.color": "grey",
     "cSpell.ignoreWords": [
         "composables"
+    ],
+    "cSpell.words": [
+        "Nuxt"
     ]
 }

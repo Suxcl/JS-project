@@ -9,13 +9,13 @@
             </li>
             <!-- Login -->
             <li v-if="!loggedUser">
-              <nuxt-link to="/login">
+              <nuxt-link to="/auth/login">
                 Login <Icon name="ic:baseline-log-in" />
               </nuxt-link>
             </li>
             <!-- Register -->    
             <li v-if="!loggedUser">
-              <nuxt-link to="/register">
+              <nuxt-link to="/auth/register">
                 Register <Icon name="material-symbols:assignment-add-outline-rounded" />
               </nuxt-link>
             </li>
@@ -36,19 +36,21 @@
 </template>
 
 <script lang="ts" setup>
-
-
-  const logUserId  = getLoggedUserId()
-
-    var loggedUser = false
-    if (logUserId !== null){
-      loggedUser = isSomeoneLogged()
-    }
+  
+  
+  var logUserId  = null
+  var loggedUser = false
+  refreshNavbar()
 
   async function logOut(){
     logoutUser()
     navigateTo({path: '/'})
+  }
 
+  function refreshNavbar(){    
+    if (getLoggedUserId() !== null){
+      loggedUser = isSomeoneLogged()
+    }
   }
 
 </script>
