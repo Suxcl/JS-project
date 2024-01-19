@@ -40,25 +40,22 @@
             email: email.value
         },
       })
-    setTimeout(() => {
-      isLoading.value = false;
-      if(data.value?.user?.email === email.value){
-        toast.success("Success, you logged in! Redirecting to main page", {
-          timeout: 2000
-        });
-        loginUser(email.value, data.value.user.id)
-        navigateTo({path: '/'})
-          
-      }else{
-        toast.error("We could not find user with these credentials", {
-          timeout: 2000
-        });
-        email.value = ''
-        password.value = ''  
-      }   
-    }, 2000);
-      
     
+    isLoading.value = false;
+    if(data.value?.user?.email === email.value){
+      toast.success("Success, you logged in! Redirecting to main page", {
+        timeout: 2000
+      });
+      loginUser(email.value, data.value.user.id)
+      navigateTo({path: '/'})
+        
+    }else{
+      toast.error("We could not find user with these credentials", {
+        timeout: 2000
+      });
+      email.value = ''
+      password.value = ''  
+    }       
   };
   
 </script>

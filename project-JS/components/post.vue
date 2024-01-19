@@ -4,31 +4,33 @@
     <div class="container mx-width: 600px px-4">
         <div>
             <p>Post</p>
-            <p>ProductionOnly: {{ props.post.id }}</p>
-            <p>{{ props.post.title }}</p>
-            <p>{{ props.post.content }}</p>
-            <p>{{ props.post.authorId }}</p>
+            <p>{{ post }}</p>
             
-            <p>{{ props.post.createdAt }}</p>
-            <p>{{ props.post.updatedAt }}</p>
+            <p>ProductionOnly: {{ post.id }}</p>
+            <p>{{ post.title }}</p>
+            <p>{{ post.content }}</p>
+            <p>{{ post.authorId }}</p>
+            
+            <p>{{ post.createdAt }}</p>
+            <p>{{ post.updatedAt }}</p>
         
         </div>
     <div>
             <label>Likes</label>
-            <p>{{ props.post.likes }}</p>
+            <p>{{ post.likes }}</p>
             <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" @click="likeClicked()" >
                 Like
             </button>
             <label>Dislikes</label>
-            <p>{{ props.post.dislikes }}</p>
+            <p>{{ post.dislikes }}</p>
             <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" @click="dislikeClicked()" >
                 Dislike
             </button>
 
     </div>
-        <div v-if="props.post.authorId === loggedUserId">
+        <div v-if="post.authorId === loggedUserId">
             <p>owner Buttons</p>
-            <p>Post status: {{ props.post.private }}</p>
+            <p>Post status: {{ post.private }}</p>
             
             <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" @click="editPost(post.id)" >
                 Edit
@@ -41,7 +43,7 @@
         </div>
 
     <div>
-        <Comments :comments="postComments" :postId="props.post.id"/>
+        <Comments :comments="postComments" :postId="post.id"/>
     </div>
     </div>
     <hr>
@@ -50,13 +52,14 @@
 
 <script setup lang="ts">
     import type { Post, Comment} from '@prisma/client';
+    import { ref } from 'vue';
     // props for component
     const props = defineProps<({
         post: Post
     })>()
-
+    const post = ref(props.post)
     const loggedUserId = getLoggedUserId()
-    const postComments:Comment[] = (await $fetch(`/api/posts/postComments/${props.post.id}`) as any).comments
+    const postComments:Comment[] = (await $fetch(`/api/posts/postComments/${post.value.id}`) as any).comments
 
     const editPost = async (id:number) =>{
         console.log("edit", id)
@@ -75,15 +78,15 @@
             toastNotLoginError()
             return
         }
-        console.log("like", props.post.id, loggedUserId)
+        console.log("like", post.value.id, loggedUserId)
         const {message, ret_val } = await $fetch('/api/posts/likeClicked', {
           method: 'POST',
           body: {
-            postId: props.post.id,
+            postId: post.value.id,
             authorId: loggedUserId
           }
         })
-        props.post.likes += ret_val
+        post.value.likes += ret_val
 
     }
     const dislikeClicked = async () =>{
@@ -91,15 +94,15 @@
             toastNotLoginError()
             return
         }
-        console.log("dislike", props.post.id, loggedUserId)
+        console.log("dislike", post.value.id, loggedUserId)
         const {message, ret_val} = await $fetch('/api/posts/dislikeClicked', {
           method: 'POST',
           body: {
-            postId: props.post.id,
+            postId: post.value.id,
             authorId: loggedUserId
           }
         })
-        props.post.dislikes += ret_val
+        post.value.dislikes += ret_val
     }
 
 

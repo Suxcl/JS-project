@@ -25,6 +25,7 @@ change init to name of the migration
 npm install vue-toastification@next
 npm install vue-cryptojs
 
+
 ## Setup
 
 Make sure to install the dependencies:

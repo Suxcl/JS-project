@@ -5,6 +5,7 @@ declare module 'nitropack' {
   interface InternalApi {
     '/api/chats/:id': {
       'delete': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/chats/[id].delete').default>>>>
+      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/chats/[id].get').default>>>>
       'patch': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/chats/[id].patch').default>>>>
     }
     '/api/chats/chat': {
@@ -48,11 +49,11 @@ declare module 'nitropack' {
     '/api/invites/invite': {
       'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/invites/invite.post').default>>>>
     }
+    '/api/invites/invites': {
+      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/invites/invites.get').default>>>>
+    }
     '/api/invites/response': {
       'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/invites/response.post').default>>>>
-    }
-    '/api/invites/toUser': {
-      'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/invites/toUser.post').default>>>>
     }
     '/api/invites/toUser/:id': {
       'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/invites/toUser/[id].get').default>>>>

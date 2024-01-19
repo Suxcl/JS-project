@@ -20,12 +20,16 @@
 <script setup>
     import { ref } from 'vue';
     import { useToast } from "vue-toastification";
+    import { useRoute} from "vue-router";
+    
+    
 
     const title = ref('');
     const content = ref('');
     const images = ref([]);
     const userId = getLoggedUserId()
     const toast = useToast();
+    const route = useRoute();
 
     const formData = new FormData();
     formData.append('title', title.value);
@@ -67,7 +71,11 @@
             toast.success("Success, post created! Redirecting to main page", {
                 timeout: 2000
             })
-            navigateTo({path: '/'})
+            if(route.query.from === "profile"){
+                navigateTo({path: `/profile/${userId}`})
+            }else{
+                navigateTo({path: '/'})
+            }
         }else{
             toast.error("Something went wrong with creating post, Redirecting to main page", {
                 timeout: 2000

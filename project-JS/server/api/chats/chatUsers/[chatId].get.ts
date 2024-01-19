@@ -20,6 +20,6 @@ export default defineEventHandler( async (event) => {
         
     }
     return {
-        users: users
+        users: users.map((data) => data.chatUser)
     }
   })

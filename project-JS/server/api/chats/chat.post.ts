@@ -17,6 +17,7 @@ export default defineEventHandler( async (event) => {
     })
     let chatUsers:number[] = []
     let tmp = JSON.parse(body.users)
+    console.log("inside creating a new post ", tmp)
     tmp.forEach(async (elem:number)=>{
         await prisma.chatUser.create({
             data: {

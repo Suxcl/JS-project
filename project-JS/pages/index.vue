@@ -9,10 +9,12 @@
           </ul>
         </div>
       </div>
-      <div class="basis-4/6">
+      <div class="basis-5/6">
         <p>Posts</p>
         <div v-if="logUserId!==null">
-          <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" @click="newPost()" >
+          <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold 
+          hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" 
+          @click="newPost()" >
               New
           </button>
         </div>
@@ -22,16 +24,6 @@
             <br><hr><br>
           </ul>
         </div>
-      </div>
-      <div class="basis-1/6">
-        <p>Invites</p>
-        <div>
-          <ul v-for="inv in invList">
-            <p>{{ inv }}</p>
-          </ul>
-        </div>
-        <p>Comments</p>
-        <p>Chats</p>
       </div>
         
         

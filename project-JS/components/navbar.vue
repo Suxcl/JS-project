@@ -27,7 +27,7 @@
             </li>        
             <!-- Profile -->
             <li v-if="loggedUser" >
-              <nuxt-link to="/profile/myProfile">
+              <nuxt-link @click="goToProfile()">
                 Profile <Icon name="material-symbols:account-circle-full" />
               </nuxt-link>
             </li>
@@ -51,6 +51,10 @@
     if (getLoggedUserId() !== null){
       loggedUser = isSomeoneLogged()
     }
+  }
+  function goToProfile(){
+    let id = getLoggedUserId()
+    navigateTo({path: `/profile/${id}`})
   }
 
 </script>
