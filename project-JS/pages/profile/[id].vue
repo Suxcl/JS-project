@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-row">
     <!-- Left Column -->
-    <div class="w-1/3 p-6">
+    <div class="w-1/3 p-6 bg-white rounded-lg shadow-md">
 
       <!-- Profile Info -->
       <div class="mb-6">
@@ -30,7 +30,7 @@
     </div>
 
     <!-- Right Column -->
-    <div class="w-2/3 p-6">
+    <div class="w-2/3 p-6 bg-white rounded-lg shadow-md">
 
       <!-- User Posts -->
       <div class="mb-6">

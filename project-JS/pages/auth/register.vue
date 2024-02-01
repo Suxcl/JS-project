@@ -1,42 +1,51 @@
 <template>
-  <p>register</p>
-  <div>
-      <form>
-        <label>Email</label>
-        <input v-model="email" type="email"><br>
-
-        <label>Password</label>
-        <input v-model="password1" type="password1"><br>
-        <button>Show Password</button><br>
-
-        <label>Repeat Password</label>
-        <input v-model="password2" type="password2"><br>
-
-        <label>Name</label>
-        <input v-model="name" type="name"><br>
-
-        <label>Surname</label>
-        <input v-model="surname" type="surname"><br>
-
-        <label>
-            <input 
-                type="checkbox"
-                v-model="consent"
-                id="updates"
-            >
-            I agree to terms and conditions
-        </label><br>
-
-        <button type="submit" @click.prevent="submitForm">
-            {{ isLoading ? 'Loading...' : 'Submit' }}
-        </button><br>
-
-
-        <registerFeedback :formFeedback="formFeedback!" /><br>
-
-        <label>Already have account?</label>
-        <button>Sign In</button>
+  <div class="max-w-lg mx-auto">
+    <h2 class="text-2xl font-bold mb-4">Register</h2>
+    <div class="border rounded-lg shadow-md p-6">
+      <form @submit.prevent="submitForm" class="space-y-4">
+        <div>
+          <label for="email" class="block mb-1">Email</label>
+          <input v-model="email" id="email" type="email" class="w-full border border-gray-300 rounded-md p-2">
+        </div>
+        <div>
+          <label for="password1" class="block mb-1">Password</label>
+          <input v-model="password1" id="password1" type="password" password class="w-full border border-gray-300 rounded-md p-2">
+        </div>
+        <div>
+          <label for="password2" class="block mb-1">Repeat Password</label>
+          <input v-model="password2" id="password2" type="password" password class="w-full border border-gray-300 rounded-md p-2 ">
+        </div>
+        <!-- <div class="flex items-center">
+          <input v-model="showPassword" id="showPassword" type="checkbox" class="mr-2">
+          <label for="showPassword">Show Password</label>
+        </div> -->
+        <div>
+          <label for="name" class="block mb-1">Name</label>
+          <input v-model="name" id="name" type="text" class="w-full border-gray-300 border rounded-md p-2">
+        </div>
+        <div>
+          <label for="surname" class="block mb-1">Surname</label>
+          <input v-model="surname" id="surname" type="text" class="w-full border border-gray-300 rounded-md p-2">
+        </div>
+        <div>
+          <input v-model="consent" id="consent" type="checkbox" class="mr-2">
+          <label for="consent">I agree to terms and conditions</label>
+        </div>
+        <div>
+        <button type="submit" :disabled="isLoading" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-md" :class="{ 'opacity-50 cursor-not-allowed': isLoading }">
+          {{ isLoading ? 'Loading...' : 'Submit' }}
+        </button>
+        <button type="button"  class="ml-3 bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-md" @click="navigateTo({path:'/auth/login'})" >
+          Login Page
+        </button>
+        
+      </div>
       </form>
+    </div>
+    <div class="mt-4">
+      <RegisterFeedback :formFeedback="formFeedback" />
+    </div>
+    
   </div>
 </template>
 
@@ -64,6 +73,7 @@ const name = ref('');
 const surname = ref('');
 const consent = ref(false);
 const isLoading = ref(false);
+const showPassword = ref(false)
 const formFeedback: Ref<FormFeedbackType> = ref(null);
 const success = ref(true);
 const toast = useToast();

@@ -77,7 +77,7 @@
             <button class="mr-2 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600" @click="likeClicked()">Like</button>
             <span class="text-gray-400">{{ post.likes }}</span>
             <button class="ml-2 px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600" @click="dislikeClicked()">Dislike</button>
-            <span class="text-gray-400">{{ post.dislikes }}</span>
+            <span class="text-gray-400 ml-3">{{ post.dislikes }}</span>
           </div>
           <div v-if="post.authorId === loggedUserId" class="mt-4">
             <button class="mr-2 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600" @click="editPost(post.id)">Edit</button>

@@ -4,11 +4,11 @@
       <form>
         <div class="mb-4">
           <label for="title" class="block text-gray-700">Title</label>
-          <input v-model="title" id="title" name="title" type="text" class="mt-1 block border border-black w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50 focus:outline-none px-3 py-2">
+          <input v-model="title" id="title" name="title" type="text" class="mt-1 block border border-gray-300 w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50 focus:outline-none px-3 py-2">
         </div>
         <div class="mb-4">
           <label for="content" class="block text-gray-700">Content</label>
-          <textarea v-model="content" id="content" name="content" rows="3" class="mt-1 border border-black block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50 focus:outline-none px-3 py-2"></textarea>
+          <textarea v-model="content" id="content" name="content" rows="3" class="mt-1 border border-gray-300 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50 focus:outline-none px-3 py-2"></textarea>
         </div>
         <div class="mb-4">
           <label for="images" class="block text-gray-700">Images</label>

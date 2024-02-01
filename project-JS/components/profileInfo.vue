@@ -1,29 +1,35 @@
 <template>
-    <h3> Profile of {{ user.name }} {{ user.surname }}</h3>
-    <p>Production Only - to jest do wyjebania po zrobieniu css'a</p>
-
-    <!-- profilowe pepega -->
-    
-    <div v-if ="user.id !== logUserId">
-        <div v-if="isFriend">
-            <p>You are a friend of {{ user.name }}</p>
-            <button @click="unfriend()">Unfriend</button>
+    <div>
+      <h3 class="text-xl font-bold mb-4">Profile of {{ user.name }} {{ user.surname }}</h3>
+      
+  
+      <!-- Profilowe Pepega -->
+  
+      <div v-if="user.id !== logUserId" class="mb-4">
+        <div v-if="isFriend" class="mb-2">
+          <p>You are a friend of {{ user.name }}</p>
+          <button @click="unfriend()" class="bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded-md">
+            Unfriend
+          </button>
         </div>
         <div v-else>
-            <div v-if="!!logUserId">
-                <p>You are not a friend of {{ user.name }}</p>
-                <button @click="sentInvite()">Add Friend</button>
-            </div>
+          <div v-if="!!logUserId" class="mb-2">
+            <p>You are not a friend of {{ user.name }}</p>
+            <button @click="sentInvite()" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-md">
+              Add Friend
+            </button>
+          </div>
         </div>
+      </div>
+  
+      <!-- Możliwości zalogowanego użytkownika -->
+      <div v-else class="mb-4">
+        <!-- Change profilowe -->
+  
+        <!-- Zmiana danych -->
+      </div>
     </div>
-    <!-- możliwości zalogowanego użytkownika -->
-    <div v-else>
-        <!-- change profilowe -->
-
-        <!-- zmiana danych -->
-    </div>
-
-</template>
+  </template>
 
 <script lang="ts" setup>
     import type {User} from "@prisma/client";

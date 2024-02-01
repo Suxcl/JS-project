@@ -1,20 +1,28 @@
 <template>
-  <p>Login</p>
-  <div>
-    <form>
-        <label>Email</label>
-        <input v-model="email" type="email"><br>
-
-        <label>Password</label>
-        <input v-model="password" type="password"><br>
-
-        <button type="submit" @click.prevent="submitForm">
+  <div class="max-w-lg mx-auto">
+    <h2 class="text-2xl font-bold mb-4">Login</h2>
+    <div class="border rounded-lg shadow-md p-6">
+      <form @submit.prevent="submitForm" class="space-y-4">
+        <div>
+          <label for="email" class="block mb-1">Email</label>
+          <input v-model="email" id="email" type="email" class="w-full border border-gray-300 rounded-md p-2">
+        </div>
+        <div>
+          <label for="password" class="block mb-1">Password</label>
+          <input v-model="password" id="password" password type="password" class="w-full border border-gray-300 rounded-md p-2">
+        </div>
+        <div>
+          <button type="submit" :disabled="isLoading" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-md" :class="{ 'opacity-50 cursor-not-allowed': isLoading }">
             {{ isLoading ? 'Loading...' : 'Submit' }}
-        </button><br>
-
-        <label>You don't have an account? Register!</label>
-        <button>Sign Up</button>
-    </form>
+          </button>
+          <button class="ml-3 bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-md" @click="navigateToRegister()">Sign Up</button>
+      </div>
+      </form>
+    </div>
+    <!-- <div class="mt-4">
+      <label class="block mb-1">You don't have an account? Register!</label>
+      <button class="text-blue-500 hover:text-blue-700 font-bold" @click="navigateToRegister()">Sign Up</button>
+    </div> -->
   </div>
 </template>
 
@@ -47,8 +55,8 @@
         timeout: 2000
       });
       loginUser(email.value, data.value.user.id)
-      window.location.reload()
       navigateTo({path: '/'})
+      
         
     }else{
       toast.error("We could not find user with these credentials", {
@@ -57,6 +65,10 @@
       email.value = ''
       password.value = ''  
     }       
-  };
+  }
+
+  function navigateToRegister(){
+    navigateTo({path: '/auth/register'})
+  }
   
 </script>
