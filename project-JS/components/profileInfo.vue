@@ -10,8 +10,10 @@
             <button @click="unfriend()">Unfriend</button>
         </div>
         <div v-else>
-            <p>You are not a friend of {{ user.name }}</p>
-            <button @click="sentInvite()">Add Friend</button>
+            <div v-if="!!logUserId">
+                <p>You are not a friend of {{ user.name }}</p>
+                <button @click="sentInvite()">Add Friend</button>
+            </div>
         </div>
     </div>
     <!-- możliwości zalogowanego użytkownika -->

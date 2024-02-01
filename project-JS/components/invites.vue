@@ -40,6 +40,7 @@
                 user2Id: invite.user_to_id
             }
         })
+        window.location.reload()
     }
     const declineInvite = async (invite: Invite) => {
         await $fetch(`/api/invites/response`, {
@@ -54,6 +55,7 @@
                 timeout: 2000
             })
         })
+        window.location.reload()
     }
 
 

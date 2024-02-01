@@ -24,7 +24,14 @@
 
         <div>
           <!-- // link to chats    -->
-          <Chats :userChats="userChats"/>  
+          <!-- <Chats :userChats="userChats"/>   -->
+          <p @click="navigateToChats()">Chats</p>
+            <!-- <ul v-for="chat in chats"> 
+                <li @click="navigateToChats(chat.id)" class="hover:text-blue-500">
+                    {{chat.name}} 
+                </li>
+            </ul> -->
+
           <hr>
         </div>
       </div>
@@ -57,18 +64,25 @@
   const logUserId = getLoggedUserId()
   const id = route.params.id
   
-  const user                :User = (await $fetch(`/api/users/${id}`) as any).user
-  const userFriends         :number[] = (await $fetch(`/api/users/friends/${id}`) as any).friends
-  const userPosts           :Post[] = ((await $fetch(`/api/users/posts/${id}`)) as any).posts
-  const userPendingInvites  :Invite[] = (await $fetch(`/api/invites/toUser/${id}`) as any).invites
-  const fullFriendsData     :User[] = []
+  const user               = ref<User>((await $fetch(`/api/users/${id}`) as any).user)
+  const userFriends        = ref<Number[]>((await $fetch(`/api/users/friends/${id}`) as any).friends)
+  const userPosts          = ref<Post[]>((await $fetch(`/api/users/posts/${id}`) as any).posts)
+  const userPendingInvites = ref<Invite[]>((await $fetch(`/api/invites/toUser/${id}`) as any).invites)
+  const fullFriendsData = ref<User[]>([])
   
-
-  userFriends.forEach(async (data) => {
-    fullFriendsData.push(
+  userFriends.value.forEach(async (data) => {
+    fullFriendsData.value.push(
       (await $fetch(`/api/users/${data }`) as any).user
     )
   })
+
+      
+  function navigateToChats(id:number=0){
+        if(id === 0){
+            navigateTo({path: `/chat/chats}`})    
+        }
+        navigateTo({path: `/chat/chats`, query: {id:id}})
+    }
 </script>
 
 <style>

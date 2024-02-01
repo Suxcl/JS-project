@@ -39,8 +39,10 @@
   
   
   var logUserId  = null
-  var loggedUser = false
+  const loggedUser = ref<Boolean>(false)
   refreshNavbar()
+
+  
 
   async function logOut(){
     logoutUser()
@@ -49,7 +51,7 @@
 
   function refreshNavbar(){    
     if (getLoggedUserId() !== null){
-      loggedUser = isSomeoneLogged()
+      loggedUser.value = isSomeoneLogged()
     }
   }
   function goToProfile(){

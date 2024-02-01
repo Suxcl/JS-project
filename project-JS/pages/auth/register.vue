@@ -136,6 +136,7 @@ const submitForm = async () => {
       toast.success("Success, you created your own account, redirecting to main page", {
           timeout: 2000
       });    
+      loginUser(res.createUser.email , res.createUser.id)
       navigateTo({path: '/'})
     }
   ).catch(err => {
