@@ -137,6 +137,7 @@ const submitForm = async () => {
           timeout: 2000
       });    
       loginUser(res.createUser.email , res.createUser.id)
+      window.location.reload()
       navigateTo({path: '/'})
     }
   ).catch(err => {

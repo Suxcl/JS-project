@@ -47,6 +47,7 @@
         timeout: 2000
       });
       loginUser(email.value, data.value.user.id)
+      window.location.reload()
       navigateTo({path: '/'})
         
     }else{
