@@ -140,7 +140,7 @@ const submitForm = async () => {
     method: 'POST',
     body: {
       email: email.value,
-      password: hashPassword(password1.value),
+      password: password1.value,
       name: name.value,
       surname: surname.value
     }
@@ -153,8 +153,8 @@ const submitForm = async () => {
           timeout: 2000
       });    
       loginUser(res.createUser.email , res.createUser.id)
-      // navigateTo({path: '/'})
-      // setTimeout(()=>{window.location.reload()}, 1000)
+      navigateTo({path: '/'})
+      setTimeout(()=>{window.location.reload()}, 1000)
       
     }
   ).catch(err => {

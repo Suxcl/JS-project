@@ -1,10 +1,21 @@
 <template>
-    <ul v-for="invite in invites">
-        {{ invite }}
-        <button @click = "acceptInvite(invite)">Accept</button>
-        <button @click = "declineInvite(invite)">Decline</button>
+    <div>
+      <h3 class="text-xl font-bold mb-4">Invites</h3>
+      <ul>
+        <li v-for="invite in invites" :key="invite.id" class="mb-4">
+          <div class="bg-white rounded-xl shadow-md p-4">
+            <div class="flex justify-between items-center">
+              <div class="text-lg font-semibold">{{ invite.user_from_id }}</div>
+              <div>
+                <button @click="acceptInvite(invite)" class="px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600">Accept</button>
+                <button @click="declineInvite(invite)" class="px-4 py-2 bg-red-500 text-white rounded-md hover:bg-red-600 ml-2">Decline</button>
+              </div>
+            </div>
+          </div>
+        </li>
       </ul>
-</template>
+    </div>
+  </template>
 
 <script setup lang="ts">
     import type {Invite} from "@prisma/client";

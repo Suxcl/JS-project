@@ -28,6 +28,5 @@ export { isSomeoneLogged } from '../composables/isSomeoneLogged';
 export { loginUser } from '../composables/loginUser';
 export { logoutUser } from '../composables/logoutUser';
 export { toastNotLoginError } from '../composables/toastNotLoginError';
-export { hashPassword, comparePassword } from '../utils/bcrypt';
 export { useNuxtDevTools } from '../node_modules/@nuxt/devtools/dist/runtime/use-nuxt-devtools';
 export { definePageMeta } from '../node_modules/nuxt/dist/pages/runtime/composables';

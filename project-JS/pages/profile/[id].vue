@@ -21,11 +21,6 @@
         <hr class="my-4 border-t-2 border-gray-200">
       </div>
 
-      <!-- Chats (Visible only to logged-in user) -->
-      <div v-if="logUserId === user.id" class="mb-6">
-        <p @click="navigateToChats()" class="cursor-pointer text-blue-500 hover:underline">Chats</p>
-        <hr class="my-4 border-t-2 border-gray-200">
-      </div>
 
     </div>
 

@@ -51,8 +51,9 @@
   
 
   async function logOut(){
-    logoutUser()
+    
     navigateTo({path: '/'})
+    logoutUser()
   }
 
   function refreshNavbar(){    

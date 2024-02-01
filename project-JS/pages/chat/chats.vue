@@ -1,92 +1,87 @@
 <template>
-    <!-- whole -->
-    <div class="flex flex-row gap-4 ">
-        <!-- left panel -->
-        <div class="basis-1/3 border h-screen p-4">
-            <!-- new chat -->
-            <div>
-                <button @click="newChat()">New Chat</button>
-            </div>
-
-            <!-- search -->
-            <div>
-                <input type="text" v-model="search" placeholder="search chats">
-            </div>
-
-            <!-- chat list -->
-            <div class="h-screen scrollbar">
-                <p>Chats</p>
-                <ul v-for="chat in filteredChats()" :key="chat.name"> 
-                <li @click="openChatFun(chat)" class="hover:text-blue-500">
-                    {{chat.name}} 
-                </li>
-            </ul>
-            </div>
-
+    <!-- Whole -->
+    <div class="flex gap-4">
+      <!-- Left panel -->
+      <div class="w-1/3 border h-screen p-4">
+        <!-- New chat -->
+        <div>
+          <button @click="newChat()" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">New Chat</button>
         </div>
-        <!-- right panel -->
-        <div class="basis-2/3 border">
-            <!-- new chat menu -->
-            
-            <div v-if="rightPanel===0">
-                <form>
-                    <input type="text" v-model="newChatName" class="border" placeholder="chat name">
-                    <button type="submit" @click.prevent="createChat()">Create</button>
-                    <!-- added users -->
-                    <div>
-                        <p>Added Users</p>
-                        <div class="grid grid-cols-4 gap-4">
-                            <div @click="removeUserFromChat(user)" v-for="user in addedFriends" class="hover:text-blue-500 p-2 border">
-                                {{ user.name }} {{ user.surname }}
-                            </div>
-                        </div>
-                    </div>
-                    <!-- listing friends -->
-                    <div>
-                        <p>Friends</p>
-                        <div class="grid grid-cols-4 gap-4">
-                            <div @click="addUserToChat(friend)" v-for="friend in friendsList" class="hover:text-blue-500 p-2 border">
-                                {{ friend.name }} {{ friend.surname }}
-                            </div>
-                        </div>
-                    </div>
-
-                </form>
-            </div>  
-            <!-- selected chat -->
-            <div v-else>
-                <!-- Users -->
-                <div>
-                    <span v-for="user in openChatUsers.reverse()">
-                        <label v-if="user!==undefined">{{user?.name}} {{ "|" }}</label>
-                    </span>
-                </div>
-                <!-- Messages -->
-                <div>
-                    <p>Chat Messages</p>
-
-                    <div>
-                        <span v-for="mess in openChatMessages">
-                            <label>
-                                <p>author: {{openChatUsers.find(user => user?.id === mess?.authorId)?.name}}</p>
-                                <p>{{mess?.content}} </p>
-                            </label>
-                        </span>
-                    </div>
-
-                    <div>
-                        <form @submit.prevent="sendMessage()">
-                            <input type="text" v-model="message" class="border" placeholder="message">
-                            <button type="submit">Send</button>
-                        </form>
-                    </div>
-                    
-                </div>
-            </div>  
+  
+        <!-- Search -->
+        <div class="mt-4">
+          <input type="text" v-model="search" class="border p-2 rounded-md w-full" placeholder="Search chats">
         </div>
-        
+  
+        <!-- Chat list -->
+        <div class="h-full overflow-y-auto mt-4">
+          <p class="font-semibold mb-2">Chats</p>
+          <ul>
+            <li v-for="chat in filteredChats()" :key="chat.name" @click="openChatFun(chat)" class="hover:text-blue-500 cursor-pointer">
+              {{ chat.name }}
+            </li>
+          </ul>
+        </div>
+      </div>
+  
+      <!-- Right panel -->
+      <div class="w-2/3 border">
+        <!-- New chat menu -->
+        <div v-if="rightPanel === 0" class="p-4">
+          <form @submit.prevent="createChat()">
+            <input type="text" v-model="newChatName" class="border p-2 rounded-md mb-4 w-full" placeholder="Chat name">
+            <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 mr-2">Create</button>
+            <!-- Added users -->
+            <div>
+              <p class="font-semibold mt-4">Added Users</p>
+              <div class="grid grid-cols-4 gap-4">
+                <div v-for="user in addedFriends" :key="user.id" @click="removeUserFromChat(user)" class="hover:text-blue-500 p-2 border cursor-pointer">
+                  {{ user.name }} {{ user.surname }}
+                </div>
+              </div>
+            </div>
+            <!-- Listing friends -->
+            <div>
+              <p class="font-semibold mt-4">Friends</p>
+              <div class="grid grid-cols-4 gap-4">
+                <div v-for="friend in friendsList" :key="friend.id" @click="addUserToChat(friend)" class="hover:text-blue-500 p-2 border cursor-pointer">
+                  {{ friend.name }} {{ friend.surname }}
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+  
+        <!-- Selected chat -->
+        <div v-else class="p-4">
+          <!-- Users -->
+          <div class="mb-4">
+            <span v-for="user in openChatUsers.reverse()" :key="user.id">
+              <label v-if="user">{{ user.name }} | </label>
+            </span>
+          </div>
+          <!-- Messages -->
+          <div>
+            <p class="font-semibold mb-2">Chat Messages</p>
+            <div>
+              <div v-for="mess in openChatMessages" :key="mess.id">
+                <p>
+                  <strong>Author:</strong> {{ openChatUsers.find(u => u.id === mess.authorId)?.name }}
+                </p>
+                <p>{{ mess.content }}</p>
+              </div>
+            </div>
+            <div class="mt-4">
+              <form @submit.prevent="sendMessage()">
+                <input type="text" v-model="message" class="border p-2 rounded-md w-full" placeholder="Message">
+                <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 mt-2">Send</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-</template>
+  </template>
 
 <script setup lang="ts">
     import { ref } from "vue";
