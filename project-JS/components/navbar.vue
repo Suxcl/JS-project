@@ -27,9 +27,15 @@
             </li>        
             <!-- Profile -->
             <li v-if="loggedUser" >
-              <nuxt-link @click="goToProfile()">
+              <button @click="goToProfile()">
                 Profile <Icon name="material-symbols:account-circle-full" />
-              </nuxt-link>
+              </button>
+            </li>
+            <!-- Chats -->
+            <li v-if="loggedUser" >
+              <button @click="goToChats()">
+                Chats <Icon name="material-symbols:account-circle-full" />
+              </button>
             </li>
           </ul>
         </nav>
@@ -57,6 +63,9 @@
   function goToProfile(){
     let id = getLoggedUserId()
     navigateTo({path: `/profile/${id}`})
+  }
+  function goToChats(){
+    navigateTo({path: '/chat/chats'})
   }
 
 </script>

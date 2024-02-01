@@ -24,6 +24,8 @@ change init to name of the migration
 # miscellaneous
 npm install vue-toastification@next
 npm install vue-cryptojs
+npm i --save-dev @types/bcrypt
+
 
 
 ## Setup

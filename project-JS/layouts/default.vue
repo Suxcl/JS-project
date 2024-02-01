@@ -11,9 +11,7 @@
           <slot />
         </div>
 
-        <div v-if="route.query.id!=='id'" class="h-screen w-1/6 bg-gray-800 text-white right-0 fixed overflow p-4">
-          <Sidebar/>
-        </div>
+        
 
       </div>
   </div>

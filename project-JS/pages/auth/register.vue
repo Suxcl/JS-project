@@ -43,7 +43,7 @@
       </form>
     </div>
     <div class="mt-4">
-      <RegisterFeedback :formFeedback="formFeedback" />
+      <RegisterFeedback :formFeedback="(formFeedback as string)"  />
     </div>
     
   </div>
@@ -80,6 +80,8 @@ const toast = useToast();
 
 
 const submitForm = async () => {
+  //e.preventDefault()
+
   isLoading.value = true;
   formFeedback.value = null;
   const regex_email = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
@@ -130,11 +132,15 @@ const submitForm = async () => {
         }
       }
     ).catch(err => console.log(err));
+  
+  // let hashedPassword = await hashPassword(password1.value)
+  // console.log(hashedPassword)
+
   const answer = await $fetch('/api/users/users', {
     method: 'POST',
     body: {
       email: email.value,
-      password: password1.value,
+      password: hashPassword(password1.value),
       name: name.value,
       surname: surname.value
     }
@@ -147,8 +153,9 @@ const submitForm = async () => {
           timeout: 2000
       });    
       loginUser(res.createUser.email , res.createUser.id)
-      window.location.reload()
-      navigateTo({path: '/'})
+      // navigateTo({path: '/'})
+      // setTimeout(()=>{window.location.reload()}, 1000)
+      
     }
   ).catch(err => {
     success.value = false;
@@ -156,6 +163,7 @@ const submitForm = async () => {
           timeout: 2000
       });    
   })
+  
   
 }
 </script>

@@ -56,6 +56,7 @@
       });
       loginUser(email.value, data.value.user.id)
       navigateTo({path: '/'})
+      setTimeout(()=>{window.location.reload()}, 1000)
       
         
     }else{
