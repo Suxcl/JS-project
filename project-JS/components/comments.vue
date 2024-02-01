@@ -1,32 +1,42 @@
+
+
 <template>
     <div>
-        <h3>Comments</h3>
-        <!-- new comment form -->
-        <form v-if="loggedUserId!==null">
-            <input type="text" v-model="comment">
-            <button @click.prevent="newComment()">Add Comment</button>
-        </form>
-        
-        <ul>
-            <li v-for="comment in commentsRef">
-                <div v-if="comment.id === editId">
-                    <form>
-                        <input type="text" v-model="commentEdit">
-                        <button @click.prevent="saveComment(comment.id)">Save</button>
-                    </form>
-                    <button @click="cancelEdit()">Cancel</button>
-                </div>
-                <div v-else>
-                    <Comment :comment="comment"/>
-                    <div v-if="comment.authorId === loggedUserId">
-                        <button @click="editComment(comment.id, comment.content)">Edit</button>
-                        <button @click="deleteComment(comment.id)">Delete</button>
-                    </div>
-                </div>
-            </li>
-        </ul>
+      <h3 class="text-lg font-bold mb-4">Comments</h3>
+      <form v-if="loggedUserId !== null" class="mb-4">
+        <input type="text" v-model="comment" class="border rounded-md py-2 px-3 mr-2">
+        <button @click.prevent="newComment()" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
+          Add Comment
+        </button>
+      </form>
+      <ul>
+        <li v-for="comment in commentsRef" :key="comment.id" class="mb-4">
+          <div v-if="comment.id === editId" class="mb-2">
+            <form class="mb-2">
+              <input type="text" v-model="commentEdit" class="border rounded-md py-2 px-3 mr-2">
+              <button @click.prevent="saveComment(comment.id)" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
+                Save
+              </button>
+            </form>
+            <button @click="cancelEdit()" class="text-blue-500 hover:text-blue-700 font-bold">
+              Cancel
+            </button>
+          </div>
+          <div v-else>
+            <Comment :comment="comment" />
+            <div v-if="comment.authorId === loggedUserId">
+              <button @click="editComment(comment.id, comment.content)" class="text-blue-500 hover:text-blue-700 font-bold mr-2">
+                Edit
+              </button>
+              <button @click="deleteComment(comment.id)" class="text-red-500 hover:text-red-700 font-bold">
+                Delete
+              </button>
+            </div>
+          </div>
+        </li>
+      </ul>
     </div>
-</template>
+  </template>
 
 <script setup lang="ts">
     import type { Comment } from '@prisma/client';

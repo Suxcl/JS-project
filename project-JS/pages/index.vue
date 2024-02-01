@@ -1,36 +1,34 @@
-<template >
-    <div class="flex flex-row">
-      <div class="basis-1/6">
-        <p>Users</p>
-        <div>
-          <ul v-for="user in usersList">
-            <NuxtLink :to="`/profile/${user.id}`"><p>{{ user }}</p></NuxtLink>
-            
-          </ul>
-        </div>
-      </div>
-      <div class="basis-5/6">
-        <p>Posts</p>
-        <div v-if="logUserId!==null">
-          <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold 
-          hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" 
-          @click="newPost()" >
-              New
-          </button>
-        </div>
-        <div>
-          <ul v-for="post in postList.reverse()">        
-            <Post :post="post"/>
-            <br><hr><br>
-          </ul>
-        </div>
-      </div>
-        
-        
-    
+<template>
+  <div class="flex flex-row">
+    <!-- Sidebar -->
+    <div class="w-1/6  p-4">
+      <p class="font-semibold text-lg mb-4">Users</p>
+      <ul>
+        <li v-for="user in usersList" :key="user.id" class="mb-2">
+        <NuxtLink :to="`/profile/${user.id}`" class="block w-full p-4 bg-white rounded-lg border border-gray-300 hover:border-blue-500 hover:bg-blue-50 text-center">{{}} {{ user.name }} {{ user.surname }}</NuxtLink>
+      </li>
+      </ul>
     </div>
-    
-  </template>
+
+    <!-- Main Content -->
+    <div class="w-5/6 p-4">
+      <p class="font-semibold text-lg mb-4">Posts</p>
+      <div v-if="logUserId !== null" class="mb-4">
+        <button @click="newPost" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded">
+          New Post
+        </button>
+      </div>
+      <div>
+        <ul>
+          <li v-for="post in postList.reverse()" :key="post.id" class="mb-4">
+            <Post :post="post"/>
+            <hr class="my-4 border-t-2 border-gray-200">
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</template>
   
   <script lang="ts" setup>
   

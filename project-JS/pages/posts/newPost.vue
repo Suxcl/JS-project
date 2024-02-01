@@ -1,21 +1,27 @@
 <template>
-    <p>Create New Post</p>
-    <div>
-        <form>
-            <label>Title</label>
-            <input v-model="title" type="text"><br>
-
-            <label>Content</label>
-            <input v-model="content" type="text"><br>
-
-            <label>Images</label>
-            <input v-on:change="onFileChange" type="file" multiple accept="image/*" ><br>
-
-            <button type="submit" @click.prevent="submitForm">Submit</button>
-
-        </form>
+    <div class="max-w-md mx-auto p-6 bg-gray-50 rounded-lg shadow-md">
+      <h2 class="text-2xl font-semibold mb-4">Create New Post</h2>
+      <form>
+        <div class="mb-4">
+          <label for="title" class="block text-gray-700">Title</label>
+          <input v-model="title" id="title" name="title" type="text" class="mt-1 block border border-black w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50 focus:outline-none px-3 py-2">
+        </div>
+        <div class="mb-4">
+          <label for="content" class="block text-gray-700">Content</label>
+          <textarea v-model="content" id="content" name="content" rows="3" class="mt-1 border border-black block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-500 focus:ring-opacity-50 focus:outline-none px-3 py-2"></textarea>
+        </div>
+        <div class="mb-4">
+          <label for="images" class="block text-gray-700">Images</label>
+          <input v-on:change="onFileChange" id="images" name="images" type="file" multiple accept="image/*" class="mt-1 block w-full">
+        </div>
+        <div>
+          <button type="submit" @click.prevent="submitForm" class="w-full bg-blue-500 text-white font-semibold py-2 px-4 rounded hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-500 focus:ring-opacity-50">Submit</button>
+        </div>
+      </form>
     </div>
-</template>
+  </template>
+  
+  
 
 <script setup>
     import { ref } from 'vue';

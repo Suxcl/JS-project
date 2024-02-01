@@ -1,21 +1,25 @@
 <template>
-    <div class="border">
-        
-        <p>Author</p>
-        <label>{{ author.name }} {{ author.surname}}</label>
-        <p>Content</p>
-        <label>{{ props.comment.content }}</label>
-        <p>Creation Date</p>
-        <label>{{ props.comment.createdAt }}</label>
-        
+    <div class="border p-4 mb-4">
+      <div class="mb-2">
+        <p class="font-bold">Author:</p>
+        <p>{{ author?.name }} {{ author?.surname }}</p>
+      </div>
+      <div class="mb-2">
+        <p class="font-bold">Content:</p>
+        <p>{{ props.comment.content }}</p>
+      </div>
+      <div>
+        <p class="font-bold">Creation Date:</p>
+        <p>{{ formatDate(props.comment.createdAt) }}</p>
+      </div>
     </div>
-</template>
+  </template>
 <script setup lang="ts">
-    import type { Comment } from '@prisma/client';
+    import type { Comment, User } from '@prisma/client';
     const props = defineProps<({
         comment: Comment
     })>();
 
-    const author = (await $fetch(`/api/users/${props.comment.authorId}`)).user    
+    const author = ref<User>((await $fetch(`/api/users/${props.comment.authorId}`) as any).user )
 
 </script>
