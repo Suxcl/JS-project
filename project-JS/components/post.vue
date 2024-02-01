@@ -1,57 +1,8 @@
 
 
-<template>
-    <div class="container mx-width: 600px px-4">
-        <div>
-            <p>Post</p>
-            <p>{{ post }}</p>
-            
-            <p>ProductionOnly: {{ post.id }}</p>
-            <p>{{ post.title }}</p>
-            <p>{{ post.content }}</p>
-            <p>{{ post.authorId }}</p>
-            
-            <p>{{ post.createdAt }}</p>
-            <p>{{ post.updatedAt }}</p>
-        
-        </div>
-    <div>
-            <label>Likes</label>
-            <p>{{ post.likes }}</p>
-            <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" @click="likeClicked()" >
-                Like
-            </button>
-            <label>Dislikes</label>
-            <p>{{ post.dislikes }}</p>
-            <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" @click="dislikeClicked()" >
-                Dislike
-            </button>
-
-    </div>
-        <div v-if="post.authorId === loggedUserId">
-            <p>owner Buttons</p>
-            <p>Post status: {{ post.private }}</p>
-            
-            <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" @click="editPost(post.id)" >
-                Edit
-            </button>
-        
-            
-            <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" @click="deletePost(post.id)">
-                Delete
-            </button>
-        </div>
-
-    <div>
-        <Comments :comments="postComments" :postId="post.id"/>
-    </div>
-    </div>
-    <hr>
-</template>
-
 
 <script setup lang="ts">
-    import type { Post, Comment} from '@prisma/client';
+    import type { Post, Comment, User} from '@prisma/client';
     import { ref } from 'vue';
     // props for component
     const props = defineProps<({
@@ -60,7 +11,7 @@
     const post = ref(props.post)
     const loggedUserId = getLoggedUserId()
     const postComments:Comment[] = (await $fetch(`/api/posts/postComments/${post.value.id}`) as any).comments
-
+    const user:User = (await $fetch(`/api/users/${post.value.authorId}`)).user
     const editPost = async (id:number) =>{
         console.log("edit", id)
         await navigateTo({
@@ -107,4 +58,36 @@
 
 
 </script>
+
+
+<template>
+    <div class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl">
+      <div class="md:flex">
+        <div class="md:flex-shrink-0">
+          <!-- <img class="h-48 w-full object-cover md:w-48" :src="post.imageUrl" :alt="post.title"> -->
+        </div>
+        <div class="p-8">
+          <div class="uppercase tracking-wide text-sm text-indigo-500 font-semibold">Tytuł: {{ post.title }}</div>
+          <p class="mt-2 text-gray-500">{{ post.content }}</p>
+          <div class="mt-4">
+            <span class="text-gray-400">{{ user.name }} {{ user.surname }}</span>
+            <span class="ml-2 text-gray-400">{{ formatDate(post.createdAt as Date) }}</span>
+          </div>
+          <div class="mt-4 flex items-center">
+            <button class="mr-2 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600" @click="likeClicked()">Like</button>
+            <span class="text-gray-400">{{ post.likes }}</span>
+            <button class="ml-2 px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600" @click="dislikeClicked()">Dislike</button>
+            <span class="text-gray-400">{{ post.dislikes }}</span>
+          </div>
+          <div v-if="post.authorId === loggedUserId" class="mt-4">
+            <button class="mr-2 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600" @click="editPost(post.id)">Edit</button>
+            <button class="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600" @click="deletePost(post.id)">Delete</button>
+          </div>
+          <div class="mt-4">
+            <Comments :comments="postComments" :postId="post.id"/>
+          </div>
+        </div>
+      </div>
+    </div>
+  </template>
 

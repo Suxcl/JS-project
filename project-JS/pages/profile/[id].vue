@@ -1,58 +1,44 @@
 <template>
   <div class="flex flex-row">
-    <div class="basis-1/3">
+    <!-- Left Column -->
+    <div class="w-1/3 p-6">
 
-      <!-- // Your info -->
-      <div class="row-span-2">
+      <!-- Profile Info -->
+      <div class="mb-6">
         <ProfileInfo :user="user"/>
-        <hr>
+        <hr class="my-4 border-t-2 border-gray-200">
       </div>
 
-      <div>
-        <!-- // friendsPanel -->  
+      <!-- Friend Panel -->
+      <div class="mb-6">
         <FriendPanel :friends="fullFriendsData"/>
-        <hr>
+        <hr class="my-4 border-t-2 border-gray-200">
       </div>
 
-      
-      <div v-if="logUserId === user.id">
-        <div>
-          <!-- // pending invites -->
-          <Invites :invites="userPendingInvites"/>
-          <hr>
-        </div>
+      <!-- Pending Invites (Visible only to logged-in user) -->
+      <div v-if="logUserId === user.id" class="mb-6">
+        <Invites :invites="userPendingInvites"/>
+        <hr class="my-4 border-t-2 border-gray-200">
+      </div>
 
-        <div>
-          <!-- // link to chats    -->
-          <!-- <Chats :userChats="userChats"/>   -->
-          <p @click="navigateToChats()">Chats</p>
-            <!-- <ul v-for="chat in chats"> 
-                <li @click="navigateToChats(chat.id)" class="hover:text-blue-500">
-                    {{chat.name}} 
-                </li>
-            </ul> -->
-
-          <hr>
-        </div>
+      <!-- Chats (Visible only to logged-in user) -->
+      <div v-if="logUserId === user.id" class="mb-6">
+        <p @click="navigateToChats()" class="cursor-pointer text-blue-500 hover:underline">Chats</p>
+        <hr class="my-4 border-t-2 border-gray-200">
       </div>
 
     </div>
-    <div class="basis-2/3">
-      <div class="col-span-2">
-        <!-- // your posts   -->
-        <Posts :posts ="userPosts"/>
-        <hr>
+
+    <!-- Right Column -->
+    <div class="w-2/3 p-6">
+
+      <!-- User Posts -->
+      <div class="mb-6">
+        <Posts :posts="userPosts"/>
+        <hr class="my-4 border-t-2 border-gray-200">
       </div>
+
     </div>
-
-  
-
-
-
-    
-
-
-
   </div>
 </template>
 
